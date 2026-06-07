@@ -247,6 +247,76 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 @media(max-width:500px){
   .portrait-grid{grid-template-columns:1fr}
 }
+
+/* SHARPER HEADERS + CLEANER HERO IMAGES */
+.hero-title,
+.page-title,
+.sec-title,
+.join-title,
+.member-name,
+.portrait-name {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-title {
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
+.page-title {
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 400;
+  letter-spacing: 0.35px;
+  text-shadow: 0 4px 26px rgba(0,0,0,0.55);
+}
+
+.sec-title {
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1.06;
+  letter-spacing: 0.2px;
+  text-wrap: balance;
+}
+
+.page-hero {
+  min-height: 54vh;
+}
+
+.page-hero-bg,
+.hero-image,
+.mission-bg,
+.join-bg {
+  image-rendering: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.org-hero-img,
+.chapter-hero-img,
+.why-hero-img,
+.active-hero-img,
+.brothers-hero-img {
+  filter: saturate(1.02) contrast(1.04);
+}
+
+.class-photo img,
+.photo-item img,
+.img-frame img {
+  filter: grayscale(6%) contrast(1.03);
+}
+
+.eyebrow {
+  text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+}
+
+@media(max-width:700px){
+  .page-title{font-size:clamp(42px, 14vw, 68px)}
+  .hero-title{font-size:clamp(42px, 14vw, 76px)}
+  .sec-title{font-size:clamp(30px, 10vw, 48px)}
+}
+
 </style>
 </head>
 <body>
@@ -493,7 +563,6 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   <div class="wrap">
     <div class="sec-label reveal">Leadership</div>
     <h2 class="sec-title reveal">Executive <em>Board</em></h2>
-    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-24px">Add portrait photos by replacing the placeholder divs below with &lt;img&gt; tags pointing to each brother's photo.</p>
     <div class="portrait-grid reveal">
       <div class="portrait-card">
         <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
@@ -781,18 +850,18 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
       <div class="member-card"><div class="member-role">#62</div><div class="member-name">Jeremy Wu</div><div class="member-alias">"Skykurō"</div></div>
       <div class="member-card"><div class="member-role">#62</div><div class="member-name">Ben O'Leary</div><div class="member-alias">"λumi"</div></div>
     </div>
-  </div>
 
    <div class="hr reveal"></div>
     <div class="sec-label reveal">12th Class</div>
     <h2 class="sec-title reveal">Mu <em>Mydäs</em></h2>
-    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/1b7cea07-7d61-483b-bb01-3d24ddf10f9c-1-105-c-2_orig.jpg" alt="Blooming Betas class photo"></div>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/1b7cea07-7d61-483b-bb01-3d24ddf10f9c-1-105-c-2_orig.jpg" alt="Mu Mydas class photo"></div>
     <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #38 Martin "BΛYEK" De Leon</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#63</div><div class="member-name">Vincent Zheng</div><div class="member-alias">"Pyros"</div></div>
       <div class="member-card"><div class="member-role">#64</div><div class="member-name">Alex Yang</div><div class="member-alias">"Sylaris"</div></div>
     </div>
 
+  </div>
 
   <footer>
     <div class="footer-brand">
