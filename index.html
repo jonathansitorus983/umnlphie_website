@@ -18,115 +18,37 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--text);font-family:var(--fb);font-weight:300;overflow-x:hidden}
-.class-photo {
-  width: 100%;
-  max-width: 760px;
-  margin: -18px 0 32px;
-  border: 1px solid var(--border2);
-  border-radius: 4px;
-  overflow: hidden;
-  background: var(--dark2);
-}
 
-.class-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  filter: grayscale(10%);
-}
+/* CLASS PHOTO */
+.class-photo{width:100%;max-width:760px;margin:-18px 0 32px;border:1px solid var(--border2);border-radius:4px;overflow:hidden;background:var(--dark2)}
+.class-photo img{width:100%;height:auto;display:block;object-fit:cover;filter:grayscale(10%)}
 
-.hero-image {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(
-      rgba(12, 12, 12, 0.55),
-      rgba(12, 12, 12, 0.88)
-    ),
-    url("https://i.imgur.com/0MhDjPO.jpeg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.95;
-  background-size: cover;
-  background-position: center center;
-}
+/* HERO IMAGE */
+.hero-image{position:absolute;inset:0;background-image:linear-gradient(rgba(12,12,12,0.55),rgba(12,12,12,0.88)),url("https://i.imgur.com/0MhDjPO.jpeg");background-size:cover;background-position:center;opacity:0.75;z-index:0;transition:opacity 0.2s linear}
+.hero-content,.hero-greek,.hero-scroll{z-index:2}
+.hero-bg{z-index:1}
 
-.hero-content,
-.hero-greek,
-.hero-scroll {
-  z-index: 2;
-}
-
-.hero-bg {
-  z-index: 1;
-}
-
-/* Benefit Grid */
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin: 50px auto;
-  max-width: 1180px;
-}
-
-.benefit-card {
-  position: relative;
-  padding: 34px 28px;
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  min-height: 260px;
-  overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201, 168, 76, 0.55);
-  background: rgba(201, 168, 76, 0.07);
-}
-
-.benefit-num {
-  font-family: var(--fd);
-  font-size: 54px;
-  line-height: 1;
-  color: rgba(201, 168, 76, 0.22);
-  margin-bottom: 26px;
-}
-
-.benefit-card h3 {
-  font-family: var(--fd);
-  font-size: 24px;
-  color: var(--white);
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-.benefit-card p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text2);
-}
-
-@media (max-width: 900px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* BENEFIT CARDS */
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:50px auto;max-width:1180px}
+.benefit-card{position:relative;padding:34px 28px;background:rgba(255,255,255,0.045);border:1px solid var(--border);border-radius:8px;min-height:280px;overflow:hidden;transition:transform 0.25s ease,border-color 0.25s ease,background 0.25s ease}
+.benefit-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,0.55);background:rgba(201,168,76,0.07)}
+.benefit-icon{font-size:36px;margin-bottom:18px;display:block;line-height:1}
+.benefit-num{font-family:var(--fd);font-size:54px;line-height:1;color:rgba(201,168,76,0.22);margin-bottom:26px}
+.benefit-card h3{font-family:var(--fd);font-size:24px;color:var(--white);margin-bottom:16px;font-weight:500}
+.benefit-card p{font-size:14px;line-height:1.8;color:var(--text2)}
+@media(max-width:900px){.benefits-grid{grid-template-columns:1fr}}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(12,12,12,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
 .nav-logo{font-family:var(--fd);font-size:22px;font-weight:600;color:var(--gold);letter-spacing:2px;text-decoration:none;cursor:pointer}
 .nav-links{display:flex;align-items:center;gap:0;list-style:none}
-.nav-links > li{position:relative}
-.nav-links > li > a{display:block;padding:24px 18px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s;cursor:pointer;white-space:nowrap}
-.nav-links > li > a:hover{color:var(--gold)}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:24px 18px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s;cursor:pointer;white-space:nowrap}
+.nav-links>li>a:hover{color:var(--gold)}
 .nav-links .cta-link{color:var(--gold);border:1px solid var(--gold);padding:8px 18px;border-radius:2px;margin-left:8px;transition:all .2s}
 .nav-links .cta-link:hover{background:var(--gold);color:var(--black)}
 .dropdown{display:none;position:absolute;top:100%;left:0;background:rgba(12,12,12,0.97);border:1px solid var(--border);border-top:2px solid var(--gold);min-width:200px;list-style:none;z-index:300}
-.nav-links > li:hover .dropdown{display:block}
+.nav-links>li:hover .dropdown{display:block}
 .dropdown li a{display:block;padding:12px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text2);text-decoration:none;border-bottom:1px solid var(--border2);transition:all .2s;cursor:pointer}
 .dropdown li:last-child a{border-bottom:none}
 .dropdown li a:hover{color:var(--gold);padding-left:26px;background:rgba(201,168,76,0.05)}
@@ -161,83 +83,31 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .hero-scroll span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text2)}
 .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent)}
 
-
 /* PAGE HERO */
-.page-hero {
-  min-height: 58vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  padding: calc(68px + 52px) 24px 80px;
-  overflow: hidden;
-}
+.page-hero{min-height:58vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:calc(68px + 52px) 24px 80px;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;z-index:0}
+.page-hero-content{position:relative;z-index:1;text-align:center;margin:0 auto}
+.page-title{font-family:var(--fd);font-size:clamp(40px,7vw,80px);font-weight:300;color:var(--white);line-height:1.1}
+.page-title em{font-style:italic;color:var(--gold-light)}
 
-.page-hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.page-hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  margin: 0 auto;
-}
-
-
-.page-title {
-  font-family: var(--fd);
-  font-size: clamp(52px, 8vw, 96px);
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  color: var(--white);
-}
-
-
-.hero-title {
-  font-family: var(--fd);
-  font-size: clamp(48px, 8vw, 96px);
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-.page-title em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.org-hero-img {
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
-    url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/copy-of-dsc-0292_orig.jpg");
-  background-size: cover;
-  background-position: center 85%;
-  background-repeat: no-repeat;
-}
+/* PAGE HERO BACKGROUNDS */
+.org-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/copy-of-dsc-0292_orig.jpg");background-size:cover;background-position:center 85%;background-repeat:no-repeat}
+.chapter-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8106.jpg");background-size:cover;background-position:center 30%;background-repeat:no-repeat}
+.why-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-0771_orig.jpg");background-size:cover;background-position:center 40%;background-repeat:no-repeat}
+.active-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-7411.png");background-size:cover;background-position:center 20%;background-repeat:no-repeat}
+.brothers-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8063.jpg");background-size:cover;background-position:center 25%;background-repeat:no-repeat}
 
 /* SECTIONS */
 .wrap{max-width:1200px;margin:0 auto;padding:80px 48px}
 .sec-label{font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px}
 .sec-label::before{content:'';width:32px;height:1px;background:var(--gold);opacity:.5}
-.sec-title {
-  font-size: clamp(34px, 5vw, 64px);
-  line-height: 1.05;
-  letter-spacing: 0.25px;
-  text-wrap: balance;
-}
+.sec-title{font-family:var(--fd);font-size:clamp(28px,4vw,52px);font-weight:300;color:var(--white);line-height:1.15;margin-bottom:40px}
 .sec-title em{font-style:italic;color:var(--gold-light)}
 
 /* DIVIDER */
 .hr{height:1px;background:var(--border);margin:60px 0}
 
-/* WHAT IS */
+/* TWO COL */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:50px}
 .two-col p{font-size:16px;line-height:1.9;color:var(--text);margin-bottom:20px}
 .two-col p strong{color:var(--white)}
@@ -254,135 +124,53 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .stat-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--text2)}
 
 /* PILLARS */
-.foundation-section {
-  position: relative;
-  overflow: hidden;
-  padding: 90px 32px;
-  margin: 40px auto;
-  border-radius: 8px;
-  max-width: 1180px;
-}
-
-.foundation-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-.foundation-content .sec-label {
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.foundation-content .sec-title {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.foundation-content .members-grid {
-  max-width: 900px !important;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: 18px;
-}
-
-.foundation-content .member-card {
-  text-align: left;
-}
-
-.foundation-content .member-card:nth-child(3) {
-  grid-column: 1 / -1;
-  text-align: center;
-}
-
-.foundation-content .tags {
-  justify-content: center;
-}
+.pillars-bg{background:var(--dark)}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:40px}
+.pillar{background:var(--dark);padding:40px 34px;transition:background .3s}
+.pillar:hover{background:var(--dark2)}
+.pillar-num{font-family:var(--fd);font-size:13px;color:var(--gold);letter-spacing:2px;margin-bottom:18px;opacity:.7}
+.pillar-bar{width:36px;height:1px;background:var(--gold);margin-bottom:24px;opacity:.5;transition:width .3s,opacity .3s}
+.pillar:hover .pillar-bar{width:56px;opacity:1}
+.pillar-title{font-family:var(--fd);font-size:24px;font-weight:400;color:var(--white);margin-bottom:12px}
+.pillar-text{font-size:14px;line-height:1.8;color:var(--text2)}
 
 /* MISSION */
-.mission{text-align:center;padding:100px 48px}
+.mission{text-align:center;padding:100px 48px;position:relative;overflow:hidden}
+.mission-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),url("https://lambdaphiepsilon.org/wp-content/uploads/2025LFEConvention-scaled.jpeg");background-size:cover;background-position:center;opacity:0.55;z-index:0}
+.mission-content{position:relative;z-index:1}
 .mission-quote{font-family:var(--fd);font-size:clamp(20px,4vw,40px);font-weight:300;font-style:italic;color:var(--white);line-height:1.5;max-width:860px;margin:0 auto 40px;position:relative;padding:0 40px}
 .mission-quote::before,.mission-quote::after{font-family:var(--fd);font-size:72px;color:var(--gold);opacity:.2;position:absolute;line-height:1}
-.mission-quote::before{content:'"';top:-16px;left:0}
-.mission-quote::after{content:'"';bottom:-36px;right:0}
+.mission-quote::before{content:'\201C';top:-16px;left:0}
+.mission-quote::after{content:'\201D';bottom:-36px;right:0}
 .mission-sub{font-size:11px;color:var(--text2);letter-spacing:3px;text-transform:uppercase}
-.mission {
-  position: relative;
-  overflow: hidden;
-}
 
-.mission-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.65),
-      rgba(0, 0, 0, 0.85)
-    ),
-    url("https://lambdaphiepsilon.org/wp-content/uploads/2025LFEConvention-scaled.jpeg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.55;
-  z-index: 0;
-}
-
-.mission-content {
-  position: relative;
-  z-index: 1;
-}
+/* FOUNDATION SECTION */
+.foundation-section{position:relative;overflow:hidden;padding:90px 32px;margin:40px auto;border-radius:8px;max-width:1180px}
+.foundation-content{position:relative;z-index:1;text-align:center}
+.foundation-content .sec-label{justify-content:center;margin-left:auto;margin-right:auto}
+.foundation-content .sec-title{text-align:center;margin-left:auto;margin-right:auto}
+.foundation-content .members-grid{max-width:900px!important;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:18px}
+.foundation-content .member-card{text-align:left}
+.foundation-content .member-card:nth-child(3){grid-column:1/-1;text-align:center}
+.foundation-content .tags{justify-content:center}
 
 /* JOIN CTA */
-.join-bg {
-  position: relative;
-  overflow: hidden;
-  padding: 110px 32px;
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.72),
-      rgba(0, 0, 0, 0.88)
-    ),
-    url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-7631-1_orig.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+.join-bg{position:relative;overflow:hidden;padding:110px 32px;background-image:linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.88)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-7631-1_orig.jpg");background-size:cover;background-position:center;background-repeat:no-repeat}
 .join-greek{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--fd);font-size:clamp(120px,22vw,300px);font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(201,168,76,0.05);pointer-events:none;letter-spacing:20px;white-space:nowrap}
-.join-inner{position:relative;z-index:1;text-align:center;max-width:640px;margin:0 auto;padding:100px 48px}
+.join-inner{position:relative;z-index:1;text-align:center;max-width:640px;margin:0 auto}
 .join-title{font-family:var(--fd);font-size:clamp(30px,5vw,58px);font-weight:300;color:var(--white);margin-bottom:18px}
 .join-title em{font-style:italic;color:var(--gold-light)}
 .join-text{font-size:15px;line-height:1.8;color:var(--text2);margin-bottom:40px}
 
 /* FOOTER */
-footer {
-  padding: 28px 48px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 24px;
-  position: relative;
-  z-index: 1;
-}
+footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;position:relative;z-index:1}
 .footer-logo{font-family:var(--fd);font-size:20px;font-weight:600;color:var(--gold);letter-spacing:2px}
 .footer-text{font-size:12px;color:var(--text2);line-height:1.7;margin-top:8px}
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;}
-.footer-logo-img {
-  width: 58px;
-  height: 58px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid var(--border);}
+.footer-brand{display:flex;align-items:center;gap:14px}
+.footer-logo-img{width:58px;height:58px;object-fit:cover;border-radius:6px;border:1px solid var(--border)}
 .footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
 .footer-links a{font-size:11px;color:var(--text2);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:color .2s;cursor:pointer}
 .footer-links a:hover{color:var(--gold)}
-
 
 /* MEMBER CARDS */
 .members-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
@@ -397,6 +185,24 @@ footer {
 .member-email:hover{color:var(--gold)}
 .member-ig{font-size:11px;color:var(--text2);text-decoration:none;margin-top:5px;display:block;transition:color .2s}
 .member-ig:hover{color:var(--gold)}
+
+/* PORTRAIT CARDS */
+.portrait-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:14px}
+.portrait-card{background:var(--dark2);border:1px solid var(--border2);border-radius:4px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
+.portrait-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);opacity:0;transition:opacity .2s;z-index:1}
+.portrait-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-3px)}
+.portrait-card:hover::before{opacity:1}
+.portrait-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;filter:grayscale(15%);transition:transform .4s,filter .4s}
+.portrait-card:hover .portrait-img{transform:scale(1.04);filter:grayscale(0%)}
+.portrait-img-placeholder{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--dark3) 0%,var(--dark4) 100%);display:flex;align-items:center;justify-content:center}
+.portrait-img-placeholder svg{opacity:.15}
+.portrait-info{padding:14px 16px}
+.portrait-role{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.portrait-name{font-family:var(--fd);font-size:18px;font-weight:400;color:var(--white);margin-bottom:2px}
+.portrait-alias{font-family:var(--fd);font-size:12px;font-style:italic;color:var(--text2);margin-bottom:6px}
+.portrait-email{font-size:10px;color:var(--text2);text-decoration:none;transition:color .2s;display:block;word-break:break-all}
+.portrait-email:hover{color:var(--gold)}
+
 .sub-head{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--text2);margin:48px 0 18px;padding-bottom:12px;border-bottom:1px solid var(--border2)}
 
 /* VALUE TAGS */
@@ -412,16 +218,8 @@ footer {
 /* VIDEO */
 .video-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:3px;overflow:hidden;border:1px solid var(--border2)}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-.video-fallback {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  background: var(--dark2);
-  min-height: 360px;
-  padding: 40px;
-}
+.video-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:var(--dark2);border:1px solid var(--border2);border-radius:3px;min-height:260px;padding:40px;text-align:center}
+.video-fallback p{font-size:13px;color:var(--text2)}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
@@ -441,10 +239,13 @@ footer {
   .stats-row{grid-template-columns:1fr}
   .wrap{padding:60px 24px}
   .mission{padding:70px 24px}
-  .join-inner{padding:70px 24px}
   footer{padding:40px 24px;flex-direction:column;align-items:flex-start}
   .img-caption{display:none}
   .photo-grid{grid-template-columns:1fr}
+  .portrait-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:500px){
+  .portrait-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -493,29 +294,23 @@ footer {
 
 <!-- ===================== PAGE: HOME ===================== -->
 <div id="pg-home" class="page active">
-
-<div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-image"></div>
-  <div class="hero-greek">ΛΦΕ</div>
-  <div class="hero-content">
-    <div class="eyebrow">University of Minnesota · Est. October 25, 2020</div>
-    <h1 class="hero-title">Lambda Phi<br><em>Epsilon</em></h1>
-    <p class="hero-sub">The 75th Chapter · Associate</p>
-    <p class="hero-body">We aim to promote and unite our communities through academia, advocacy, community engagement, service, wellness and endearment. We strive to advance understandings of diverse identities, and cultures while encouraging men to become leaders.</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="goPage('chapter')">Meet Our Brothers</button>
-      <button class="btn-outline" onclick="goPage('org')">Learn More</button>
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-image"></div>
+    <div class="hero-greek">ΛΦΕ</div>
+    <div class="hero-content">
+      <div class="eyebrow">University of Minnesota · Est. October 25, 2020</div>
+      <h1 class="hero-title">Lambda Phi<br><em>Epsilon</em></h1>
+      <p class="hero-sub">The 67th Chapter · Associate</p>
+      <p class="hero-body">We aim to promote and unite our communities through academia, advocacy, community engagement, service, wellness and endearment. We strive to advance understandings of diverse identities and cultures while encouraging men to become leaders.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="goPage('chapter')">Meet Our Brothers</button>
+        <button class="btn-outline" onclick="goPage('org')">Learn More</button>
+      </div>
     </div>
+    <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
   </div>
 
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</div>
-
-  <!-- WHAT IS -->
   <div class="wrap">
     <div class="sec-label reveal">What is Lambda Phi Epsilon</div>
     <h2 class="sec-title reveal">The World's Largest<br><em>Asian-Interest Fraternity</em></h2>
@@ -535,67 +330,34 @@ footer {
     </div>
   </div>
 
-  <!-- STATS -->
   <div class="wrap" style="padding-top:0">
     <div class="stats-row reveal">
       <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Brothers Worldwide</div></div>
       <div class="stat"><div class="stat-num">13</div><div class="stat-label">Founding Fathers · UMN</div></div>
-      <div class="stat"><div class="stat-num">75th</div><div class="stat-label">Chapter · Associate Chapter</div></div>
+      <div class="stat"><div class="stat-num">67th</div><div class="stat-label">Chapter · Associate Chapter</div></div>
     </div>
   </div>
 
-  <!-- MISSION QUOTE -->
- <div class="mission">
-  <div class="mission-bg"></div>
-
-  <div class="mission-content">
-    <div class="mission-quote reveal">
-      A world where Lambda men can live authentic fulfilling lives and contribute to the pursuit of their noble purpose.
-    </div>
-    <div class="mission-sub reveal" style="margin-top:52px">
-      Lambda Phi Epsilon · Mission
+  <div class="mission">
+    <div class="mission-bg"></div>
+    <div class="mission-content">
+      <div class="mission-quote reveal">A world where Lambda men can live authentic fulfilling lives and contribute to the pursuit of their noble purpose.</div>
+      <div class="mission-sub reveal" style="margin-top:52px">Lambda Phi Epsilon · Mission</div>
     </div>
   </div>
-</div>
 
-<!-- CORE VALUES -->
-<section class="foundation-section reveal">
-  <div class="foundation-bg"></div>
-
-  <div class="foundation-content">
-    <div class="sec-label reveal">Fraternity Lore</div>
-    <h2 class="sec-title reveal">Mission, Vision &amp; <em>Values</em></h2>
-
-    <div class="members-grid reveal">
-      <div class="member-card">
-        <div class="member-role">Mission</div>
-        <div class="member-name" style="font-size:17px;line-height:1.5">
-          Guide men on a lifelong discovery of authenticity and personal growth.
-        </div>
-      </div>
-
-      <div class="member-card">
-        <div class="member-role">Vision</div>
-        <div class="member-name" style="font-size:17px;line-height:1.5">
-          A world where Lambda men live authentic and fulfilling lives.
-        </div>
-      </div>
-
-      <div class="member-card" style="grid-column:1/-1">
-        <div class="member-role">Core Values</div>
-        <div class="tags">
-          <span class="tag">Wisdom</span>
-          <span class="tag">Love</span>
-          <span class="tag">Cultural Heritage</span>
-          <span class="tag">Courageous Leadership</span>
-          <span class="tag">Authenticity</span>
-        </div>
+  <section class="foundation-section reveal">
+    <div class="foundation-content">
+      <div class="sec-label reveal">Fraternity Lore</div>
+      <h2 class="sec-title reveal">Mission, Vision &amp; <em>Values</em></h2>
+      <div class="members-grid reveal">
+        <div class="member-card"><div class="member-role">Mission</div><div class="member-name" style="font-size:17px;line-height:1.5">Guide men on a lifelong discovery of authenticity and personal growth.</div></div>
+        <div class="member-card"><div class="member-role">Vision</div><div class="member-name" style="font-size:17px;line-height:1.5">A world where Lambda men live authentic and fulfilling lives.</div></div>
+        <div class="member-card" style="grid-column:1/-1"><div class="member-role">Core Values</div><div class="tags"><span class="tag">Wisdom</span><span class="tag">Love</span><span class="tag">Cultural Heritage</span><span class="tag">Courageous Leadership</span><span class="tag">Authenticity</span></div></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- JOIN CTA -->
   <div class="join-bg">
     <div class="join-greek">ΛΦΕ</div>
     <div class="join-inner">
@@ -609,39 +371,32 @@ footer {
     </div>
   </div>
 
-<footer>
-  <div class="footer-brand">
-    <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
-
-    <div>
-      <div class="footer-logo">ΛΦΕ · UMN</div>
-      <div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div>
+  <footer>
+    <div class="footer-brand">
+      <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
+      <div><div class="footer-logo">ΛΦΕ · UMN</div><div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div></div>
     </div>
-  </div>
-  <ul class="footer-links">
-    <li><a onclick="goPage('org')">Organization</a></li>
-    <li><a onclick="goPage('chapter')">Our Chapter</a></li>
-    <li><a onclick="goPage('active')">Active House</a></li>
-    <li><a onclick="goPage('why')">Why Lambdas?</a></li>
-    <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
-  </ul>
-</footer>
+    <ul class="footer-links">
+      <li><a onclick="goPage('org')">Organization</a></li>
+      <li><a onclick="goPage('chapter')">Our Chapter</a></li>
+      <li><a onclick="goPage('active')">Active House</a></li>
+      <li><a onclick="goPage('why')">Why Lambdas?</a></li>
+      <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
+    </ul>
+  </footer>
 </div><!-- /pg-home -->
 
 <!-- ===================== PAGE: OUR ORGANIZATION ===================== -->
 <div id="pg-org" class="page">
   <div class="page-hero">
     <div class="page-hero-bg org-hero-img"></div>
-    <div class="page-hero org-hero-img"></div>
     <div class="page-hero-content">
       <div class="eyebrow">Est. February 25, 1981</div>
       <h1 class="page-title">Our <em>Organization</em></h1>
     </div>
   </div>
-
   <div class="wrap">
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">Our Foundation</div>
     <h2 class="sec-title reveal">Mission, Vision &amp; <em>Values</em></h2>
     <div class="members-grid reveal" style="max-width:900px">
@@ -649,9 +404,7 @@ footer {
       <div class="member-card"><div class="member-role">Vision</div><div class="member-name" style="font-size:17px;line-height:1.5">A world where Lambda men live authentic and fulfilling lives.</div></div>
       <div class="member-card" style="grid-column:1/-1"><div class="member-role">Core Values</div><div class="tags"><span class="tag">Wisdom</span><span class="tag">Love</span><span class="tag">Cultural Heritage</span><span class="tag">Courageous Leadership</span><span class="tag">Authenticity</span></div></div>
     </div>
-
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">Philanthropy</div>
     <h2 class="sec-title reveal">National Marrow <em>Donor Program</em></h2>
     <div class="two-col reveal">
@@ -659,36 +412,31 @@ footer {
         <p style="font-size:16px;line-height:1.9;color:var(--text);margin-bottom:20px">Our national philanthropy is the <strong style="color:var(--white)">National Marrow Donor Program (NMDP)</strong>. We collaborate with NMDP to help individuals in need of bone marrow transplants.</p>
         <p style="font-size:16px;line-height:1.9;color:var(--text)">Our fraternity actively raises awareness for leukemia and various blood disorders through local <strong style="color:var(--gold)">#BeTheMatch</strong> campaigns, registering committed donors to enhance the probability for patients to discover a life-saving match.</p>
       </div>
-    <div class="video-wrap video-fallback">
-  <p>This video cannot be embedded here.</p>
-  <a href="https://www.youtube.com/watch?v=UXYiF_rsYJo" target="_blank" class="btn-primary">
-    Watch on YouTube
-  </a>
-</div>
+      <div class="video-fallback">
+        <p>Watch our philanthropy video on YouTube</p>
+        <a href="https://www.youtube.com/watch?v=UXYiF_rsYJo" target="_blank" class="btn-primary">Watch on YouTube</a>
+      </div>
     </div>
   </div>
   <footer>
     <div class="footer-brand">
-    <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
-    <div>
-      <div class="footer-logo">ΛΦΕ · UMN</div>
-      <div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div>
+      <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
+      <div><div class="footer-logo">ΛΦΕ · UMN</div><div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div></div>
     </div>
-  </div>
-  <ul class="footer-links">
-    <li><a onclick="goPage('org')">Organization</a></li>
-    <li><a onclick="goPage('chapter')">Our Chapter</a></li>
-    <li><a onclick="goPage('active')">Active House</a></li>
-    <li><a onclick="goPage('why')">Why Lambdas?</a></li>
-    <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
-  </ul>
+    <ul class="footer-links">
+      <li><a onclick="goPage('org')">Organization</a></li>
+      <li><a onclick="goPage('chapter')">Our Chapter</a></li>
+      <li><a onclick="goPage('active')">Active House</a></li>
+      <li><a onclick="goPage('why')">Why Lambdas?</a></li>
+      <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
+    </ul>
   </footer>
 </div><!-- /pg-org -->
 
 <!-- ===================== PAGE: OUR CHAPTER ===================== -->
 <div id="pg-chapter" class="page">
   <div class="page-hero">
-    <div class="page-hero-bg"></div>
+    <div class="page-hero-bg chapter-hero-img"></div>
     <div class="page-hero-content">
       <div class="eyebrow">Est. October 25, 2020</div>
       <h1 class="page-title">Our <em>Chapter</em></h1>
@@ -700,19 +448,15 @@ footer {
     <div class="two-col">
       <div class="reveal">
         <p style="font-size:16px;line-height:1.9;color:var(--text);margin-bottom:20px">Our principal founders <strong style="color:var(--white)">Laajlim Khang, Thang Nguyen, and Devin Vue</strong> dreamt of creating and fostering another inclusive space for Asian-American males and their nuanced identities. They went on to recruit ten more men and eventually formed the interest group <strong style="color:var(--gold)">HEARTH</strong>.</p>
-        <p style="font-size:16px;line-height:1.9;color:var(--text);margin-bottom:20px">On <strong style="color:var(--white)">October 25, 2020</strong>, the University of Minnesota Associate Chapter of Lambda Phi Epsilon was officially established as the 75th chapter of the organization.</p>
+        <p style="font-size:16px;line-height:1.9;color:var(--text);margin-bottom:20px">On <strong style="color:var(--white)">October 25, 2020</strong>, the University of Minnesota Associate Chapter of Lambda Phi Epsilon was officially established as the 71st chapter of the organization.</p>
         <p style="font-size:16px;line-height:1.9;color:var(--text)">We are dedicated to fostering an inclusive space at UMN-Twin Cities — involved in leadership, educational, and advocacy initiatives, creating a safe space for our Asian-American community to celebrate our culture and connections.</p>
-        <div style="margin-top:28px">
-          <button class="btn-primary" onclick="goPage('brothers')">Meet Our Brothers</button>
-        </div>
+        <div style="margin-top:28px"><button class="btn-primary" onclick="goPage('brothers')">Meet Our Brothers</button></div>
       </div>
       <div class="video-wrap reveal">
         <iframe src="https://www.youtube.com/embed/qWAut-zCneA?si=o4dS3BuClQG6jbk_" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
-
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">Gallery</div>
     <h2 class="sec-title reveal">Chapter <em>Photos</em></h2>
     <div class="photo-grid reveal">
@@ -723,28 +467,24 @@ footer {
     </div>
   </div>
   <footer>
-  <div class="footer-brand">
-  <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
-
-    <div>
-      <div class="footer-logo">ΛΦΕ · UMN</div>
-      <div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div>
+    <div class="footer-brand">
+      <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
+      <div><div class="footer-logo">ΛΦΕ · UMN</div><div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div></div>
     </div>
-  </div>
-  <ul class="footer-links">
-    <li><a onclick="goPage('org')">Organization</a></li>
-    <li><a onclick="goPage('chapter')">Our Chapter</a></li>
-    <li><a onclick="goPage('active')">Active House</a></li>
-    <li><a onclick="goPage('why')">Why Lambdas?</a></li>
-    <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
-  </ul>
+    <ul class="footer-links">
+      <li><a onclick="goPage('org')">Organization</a></li>
+      <li><a onclick="goPage('chapter')">Our Chapter</a></li>
+      <li><a onclick="goPage('active')">Active House</a></li>
+      <li><a onclick="goPage('why')">Why Lambdas?</a></li>
+      <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
+    </ul>
   </footer>
 </div><!-- /pg-chapter -->
 
 <!-- ===================== PAGE: ACTIVE HOUSE ===================== -->
 <div id="pg-active" class="page">
   <div class="page-hero">
-    <div class="page-hero-bg"></div>
+    <div class="page-hero-bg active-hero-img"></div>
     <div class="page-hero-content">
       <div class="eyebrow">Associate · University of Minnesota</div>
       <h1 class="page-title">Active <em>House</em></h1>
@@ -753,34 +493,51 @@ footer {
   <div class="wrap">
     <div class="sec-label reveal">Leadership</div>
     <h2 class="sec-title reveal">Executive <em>Board</em></h2>
-    <div class="members-grid reveal">
-      <div class="member-card"><div class="member-role">President</div><div class="member-name">Austin Yang</div><divclass="member-alias">"Grimsanø"</div><a href="https://www.instagram.com/grim.ostin/" target="_blank" class="member-ig">@grim.ostin</a>
-      <div class="member-card"><div class="member-role">Internal Vice President</div><div class="member-name">Santosh Veluri</div><div class="member-alias">"Remediōs"</div><a href="https://www.instagram.com/santoshveluri/" target="_blank" class="member-ig">@santosh_veluri</a>
-      <div class="member-card"><div class="member-role">External Vice President</div><div class="member-name">James Xing</div><div class="member-alias">"Suryōku"</div><a href="https://www.instagram.com/imxingtheroad/" target="_blank" class="member-ig">@imxingtheroad</a>
-      <div class="member-card"><div class="member-role">VP of Records</div><div class="member-name">Ben O' Leary</div><div class="member-alias">"λumi"</div><a href="https://www.instagram.com/bmj.7/" target="_blank" class="member-ig">@bmj.7</a>
-      <div class="member-card"><div class="member-role">VP of Finance</div><div class="member-name">Vincent Zheng</div><div class="member-alias">"Pyros"</div><a href="https://www.instagram.com/vincent_zheng/" target="_blank" class="member-ig">@vincent_zheng</a>
-      <div class="member-card"><div class="member-role">VP of Standards</div><div class="member-name">John Amos</div><div class="member-alias">"KABIGON"</div><a href="https://www.instagram.com/snorlax_4000/" target="_blank" class="member-ig">@snorlax_4000</a>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-24px">Add portrait photos by replacing the placeholder divs below with &lt;img&gt; tags pointing to each brother's photo.</p>
+    <div class="portrait-grid reveal">
+      <div class="portrait-card">
+        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="portrait-info"><div class="portrait-role">President</div><div class="portrait-name">Martin De Leon</div><div class="portrait-alias">"BAYEK"</div><a href="mailto:deleo099@umn.edu" class="portrait-email">deleo099@umn.edu</a></div>
+      </div>
+      <div class="portrait-card">
+        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="portrait-info"><div class="portrait-role">Internal VP</div><div class="portrait-name">Austin Yang</div><div class="portrait-alias">"Grimsanø"</div><a href="mailto:yang7364@umn.edu" class="portrait-email">yang7364@umn.edu</a></div>
+      </div>
+      <div class="portrait-card">
+        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="portrait-info"><div class="portrait-role">External VP</div><div class="portrait-name">Jonathan Sitorus</div><div class="portrait-alias">"thymos"</div><a href="mailto:sitor008@umn.edu" class="portrait-email">sitor008@umn.edu</a></div>
+      </div>
+      <div class="portrait-card">
+        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="portrait-info"><div class="portrait-role">VP of Records</div><div class="portrait-name">Christian Delos Santos</div><div class="portrait-alias">"SERAPHINIA"</div><a href="mailto:delos074@umn.edu" class="portrait-email">delos074@umn.edu</a></div>
+      </div>
+      <div class="portrait-card">
+        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="portrait-info"><div class="portrait-role">VP of Finance</div><div class="portrait-name">Khoi Nguyen</div><div class="portrait-alias">"kodo"</div><a href="mailto:nguy4194@umn.edu" class="portrait-email">nguy4194@umn.edu</a></div>
+      </div>
+      <div class="portrait-card">
+        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="portrait-info"><div class="portrait-role">VP of Standards</div><div class="portrait-name">Advait Thakore</div><div class="portrait-alias">"Ukiyō"</div><a href="mailto:thako007@umn.edu" class="portrait-email">thako007@umn.edu</a></div>
+      </div>
+    </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">Operations</div>
     <h2 class="sec-title reveal">Preliminary <em>Board</em></h2>
 
     <div class="sub-head reveal">External</div>
     <div class="members-grid reveal">
-      <div class="member-card"><div class="member-role">Public Relations</div><div class="member-name">Danial Hasnan</div><div class="member-alias">"Arōha"</div><a href="https://www.instagram.com/dan.hsnn/" target="_blank" class="member-ig">@dan.hsnn</a>
-      <div class="member-card"><div class="member-role">Public Relations</div><div class="member-name">Vincent Zheng</div><div class="member-alias">"Pyros"</div><a href="https://www.instagram.com/vincent_zheng/" target="_blank" class="member-ig">@vincent_zheng</a>
-      <div class="member-card"><div class="member-role">Social Coordinator</div><div class="member-name">James Xing</div><div class="member-alias">"Suryōku"</div><a href="https://www.instagram.com/imxingtheroad/" target="_blank" class="member-ig">@imxingtheroad</a>
-      <div class="member-card"><div class="member-role">Multimedia Coordinator</div><div class="member-name">Jonah Sitorus</div><div class="member-alias">"thymos"</div><a href="https://www.instagram.com/jonah_si_torus/" target="_blank" class="member-ig">@jonah_si_torus</a>
-      <div class="member-card"><div class="member-role">Performance Coordinator</div><div class="member-name">Hmoov Her</div><div class="member-alias">"KITHARA"</div><a href="https://www.instagram.com/huhmoov/" target="_blank" class="member-ig">@huhmoov</a>
+      <div class="member-card"><div class="member-role">Public Relations</div><div class="member-name">Danial Hasnan</div><div class="member-alias">"Arōha"</div><a href="mailto:hasna005@umn.edu" class="member-email">hasna005@umn.edu</a></div>
+      <div class="member-card"><div class="member-role">Social Coordinator</div><div class="member-name">James Xing</div><div class="member-alias">"Suryōku"</div><a href="mailto:xing0130@umn.edu" class="member-email">xing0130@umn.edu</a></div>
+      <div class="member-card"><div class="member-role">Multimedia Coordinator</div><div class="member-name">Jonathan Sitorus</div><div class="member-alias">"thymos"</div><a href="mailto:sitor008@umn.edu" class="member-email">sitor008@umn.edu</a></div>
+      <div class="member-card"><div class="member-role">Performance Coordinator</div><div class="member-name">Advait Thakore</div><div class="member-alias">"Ukiyō"</div><a href="mailto:thako007@umn.edu" class="member-email">thako007@umn.edu</a></div>
+      <div class="member-card"><div class="member-role">Philanthropy Coordinator</div><div class="member-name">Kenji Vang</div><div class="member-alias">"Galahād"</div><a href="mailto:vang1505@umn.edu" class="member-email">vang1505@umn.edu</a></div>
     </div>
-
     <div class="sub-head reveal">Recruitment</div>
     <div class="members-grid reveal">
-      <div class="member-card"><div class="member-role">Co-Recruitment</div><div class="member-name">Nomlauj Vue</div><div class="member-alias">"kokoro"</div><a href="mailto:vuex0170@umn.edu" class="member-email">vuex0170@umn.edu</a><a href="https://www.instagram.com/huhmoov/" target="_blank" class="member-ig">@masyer_ooway</a></div>
-      <div class="member-card"><div class="member-role">Co-Recruitment</div><div class="member-name">Khoi Nguyen</div><div class="member-alias">"kodo"</div><a href="mailto:nguy5095@umn.edu" class="member-email">nguy5095@umn.edu</a><a href="https://www.instagram.com/snorlax_4000/" target="_blank" class="member-ig">@khoi2910</a></div>
+      <div class="member-card"><div class="member-role">Co-Recruitment</div><div class="member-name">Hmoov Her</div><div class="member-alias">"KITHARA"</div><a href="mailto:herxx518@umn.edu" class="member-email">herxx518@umn.edu</a><a href="https://www.instagram.com/huhmoov/" target="_blank" class="member-ig">@huhmoov</a></div>
+      <div class="member-card"><div class="member-role">Co-Recruitment</div><div class="member-name">John Amos</div><div class="member-alias">"KABIGON"</div><a href="mailto:amos0042@umn.edu" class="member-email">amos0042@umn.edu</a><a href="https://www.instagram.com/snorlax_4000/" target="_blank" class="member-ig">@snorlax_4000</a></div>
     </div>
-
     <div class="sub-head reveal">Internal</div>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">Service Coordinator</div><div class="member-name">Udonxai Xiong</div><div class="member-alias">"OMNIA"</div><a href="mailto:xiong583@umn.edu" class="member-email">xiong583@umn.edu</a></div>
@@ -789,33 +546,30 @@ footer {
       <div class="member-card"><div class="member-role">Alumni Unity</div><div class="member-name">Advait Thakore</div><div class="member-alias">"Ukiyō"</div><a href="mailto:thako007@umn.edu" class="member-email">thako007@umn.edu</a></div>
       <div class="member-card"><div class="member-role">Philanthropy Coordinator</div><div class="member-name">Jeremy Wu</div><div class="member-alias">"Skyurō"</div><a href="mailto:wuxx0701@umn.edu" class="member-email">wuxx0701@umn.edu</a></div>
     </div>
-
     <div class="sub-head reveal">Finance</div>
     <div class="members-grid reveal">
-      <div class="member-card"><div class="member-role">Co-Fundraising Coordinator</div><div class="member-name">Ben O'Leary</div><div class="member-alias">"λumi"</div><a href="https://www.instagram.com/bmj.7/" target="_blank" class="member-ig">@bmj.7</a>
-  <footer>
-    <div class="footer-brand">
-    <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
-
-    <div>
-      <div class="footer-logo">ΛΦΕ · UMN</div>
-      <div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div>
+      <div class="member-card"><div class="member-role">Co-Fundraising Coordinator</div><div class="member-name">Ben O'Leary</div><div class="member-alias">"λumi"</div><a href="mailto:olea0052@umn.edu" class="member-email">olea0052@umn.edu</a></div>
     </div>
   </div>
-  <ul class="footer-links">
-    <li><a onclick="goPage('org')">Organization</a></li>
-    <li><a onclick="goPage('chapter')">Our Chapter</a></li>
-    <li><a onclick="goPage('active')">Active House</a></li>
-    <li><a onclick="goPage('why')">Why Lambdas?</a></li>
-    <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
-  </ul>
+  <footer>
+    <div class="footer-brand">
+      <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
+      <div><div class="footer-logo">ΛΦΕ · UMN</div><div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div></div>
+    </div>
+    <ul class="footer-links">
+      <li><a onclick="goPage('org')">Organization</a></li>
+      <li><a onclick="goPage('chapter')">Our Chapter</a></li>
+      <li><a onclick="goPage('active')">Active House</a></li>
+      <li><a onclick="goPage('why')">Why Lambdas?</a></li>
+      <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
+    </ul>
   </footer>
 </div><!-- /pg-active -->
 
 <!-- ===================== PAGE: WHY LAMBDAS ===================== -->
 <div id="pg-why" class="page">
   <div class="page-hero">
-    <div class="page-hero-bg"></div>
+    <div class="page-hero-bg why-hero-img"></div>
     <div class="page-hero-content">
       <div class="eyebrow">The First &amp; Only International Asian-Interest Fraternity</div>
       <h1 class="page-title">Why <em>Lambdas?</em></h1>
@@ -826,25 +580,28 @@ footer {
       <p class="reveal" style="font-size:17px;line-height:1.9;color:var(--text);margin-bottom:22px">Our organization believes in the potential all people have in inflicting change within themselves and those around them. We welcome any men and non-binary people from any demographic to help them realize their potential in their connections and the community they foster.</p>
       <p class="reveal" style="font-size:17px;line-height:1.9;color:var(--text)">Lambda Phi Epsilon offers not only a brotherhood within our chapter, but connections throughout the multicultural greek council and across the world. With <strong style="color:var(--white)">70+ chapters</strong>, we create a sense of community internationally that is only possible through our organization.</p>
     </div>
+
     <div class="benefits-grid reveal">
-  <div class="benefit-card">
-    <div class="benefit-num">01</div>
-    <h3>Community &amp; Connections</h3>
-    <p>Lambda Phi Epsilon allows our brothers to foster a sense of community within our fraternity, the greater multicultural Greek council, and organizations across the world.</p>
-  </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🤝</span>
+        <div class="benefit-num">01</div>
+        <h3>Community &amp; Connections</h3>
+        <p>Lambda Phi Epsilon allows our brothers to foster a sense of community within our fraternity, the greater multicultural Greek council, and organizations across the world.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🌱</span>
+        <div class="benefit-num">02</div>
+        <h3>Philanthropy &amp; Advocacy</h3>
+        <p>We aim to increase awareness for advocacy topics with a special focus on APIDA initiatives, creating inclusive spaces through collaboration and events.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">⭐</span>
+        <div class="benefit-num">03</div>
+        <h3>Leadership &amp; Development</h3>
+        <p>Guided by our motto, "To Be Leaders Among Men," our fraternity cultivates the next generation of leaders within the APIDA community and beyond.</p>
+      </div>
+    </div>
 
-  <div class="benefit-card">
-    <div class="benefit-num">02</div>
-    <h3>Philanthropy &amp; Advocacy</h3>
-    <p>We aim to increase awareness for advocacy topics with a special focus on APIDA initiatives, creating inclusive spaces through collaboration and events.</p>
-  </div>
-
-  <div class="benefit-card">
-    <div class="benefit-num">03</div>
-    <h3>Leadership &amp; Development</h3>
-    <p>Guided by our motto, “To Be Leaders Among Men,” our fraternity cultivates the next generation of leaders within the APIDA community and beyond.</p>
-  </div>
-</div>
     <div style="text-align:center;margin-top:72px" class="reveal">
       <div class="sec-label" style="justify-content:center;margin-bottom:18px">Take the Next Step</div>
       <h2 style="font-family:var(--fd);font-size:clamp(26px,4vw,50px);font-weight:300;color:var(--white);margin-bottom:26px">Interested in <em style="font-style:italic;color:var(--gold-light)">Joining?</em></h2>
@@ -853,27 +610,23 @@ footer {
   </div>
   <footer>
     <div class="footer-brand">
-    <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
-
-    <div>
-      <div class="footer-logo">ΛΦΕ · UMN</div>
-      <div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div>
+      <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
+      <div><div class="footer-logo">ΛΦΕ · UMN</div><div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div></div>
     </div>
-  </div>
-  <ul class="footer-links">
-    <li><a onclick="goPage('org')">Organization</a></li>
-    <li><a onclick="goPage('chapter')">Our Chapter</a></li>
-    <li><a onclick="goPage('active')">Active House</a></li>
-    <li><a onclick="goPage('why')">Why Lambdas?</a></li>
-    <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
-  </ul>
+    <ul class="footer-links">
+      <li><a onclick="goPage('org')">Organization</a></li>
+      <li><a onclick="goPage('chapter')">Our Chapter</a></li>
+      <li><a onclick="goPage('active')">Active House</a></li>
+      <li><a onclick="goPage('why')">Why Lambdas?</a></li>
+      <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
+    </ul>
   </footer>
 </div><!-- /pg-why -->
 
 <!-- ===================== PAGE: MEET OUR BROTHERS ===================== -->
 <div id="pg-brothers" class="page">
   <div class="page-hero">
-    <div class="page-hero-bg"></div>
+    <div class="page-hero-bg brothers-hero-img"></div>
     <div class="page-hero-content">
       <div class="eyebrow">Associate · University of Minnesota</div>
       <h1 class="page-title">Meet Our <em>Brothers</em></h1>
@@ -882,13 +635,10 @@ footer {
   <div class="wrap">
 
     <div class="sec-label reveal">Founding Class</div>
-  <h2 class="sec-title reveal">Charter <em>Champions</em></h2>
-  <div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-6211_orig.jpg" alt="Charter Champions class photo">
-</div>
-<p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">
-  Crossed under the guidance of #06 Daniel "Kickstart" King
-  <div class="members-grid reveal">
+    <h2 class="sec-title reveal">Charter <em>Champions</em></h2>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-6211_orig.jpg" alt="Charter Champions class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #06 Daniel "Kickstart" King</p>
+    <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#01</div><div class="member-name">Matthew Su</div><div class="member-alias">"Orion"</div></div>
       <div class="member-card"><div class="member-role">#02</div><div class="member-name">Minh Lu</div><div class="member-alias">"FLΛRE"</div></div>
       <div class="member-card"><div class="member-role">#03</div><div class="member-name">Laajlim Khang</div><div class="member-alias">"Kinjirō"</div></div>
@@ -905,71 +655,48 @@ footer {
     </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">2nd Class</div>
-<h2 class="sec-title reveal">Ardent <em>Alphas</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8100_1_orig.jpg" alt="Ardent Alphas class photo">
-</div>
-
-<p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">
-  Crossed under the guidance of #03 Laajlim "Kinjirō" Khang
-</p>
-
-<div class="members-grid reveal">
-  <div class="member-card"><div class="member-role">#14</div><div class="member-name">Joseph Pham</div><div class="member-alias">"SASΛSHI"</div></div>
-  <div class="member-card"><div class="member-role">#15</div><div class="member-name">Sonny Hang</div><div class="member-alias">"Sirius"</div></div>
-  <div class="member-card"><div class="member-role">#16</div><div class="member-name">Steven Tran</div><div class="member-alias">"Crescendø"</div></div>
-  <div class="member-card"><div class="member-role">#17</div><div class="member-name">Chris Chunh</div><div class="member-alias">"ΛPEX"</div></div>
-  <div class="member-card"><div class="member-role">#18</div><div class="member-name">Taha Rizvi</div><div class="member-alias">"Hinotori"</div></div>
-  <div class="member-card"><div class="member-role">#19</div><div class="member-name">Isaac Vo</div><div class="member-alias">"Kairōs"</div></div>
-  <div class="member-card"><div class="member-role">#20</div><div class="member-name">Ryan Jeo</div><div class="member-alias">"Fujiwara"</div></div>
-  <div class="member-card"><div class="member-role">#21</div><div class="member-name">Keng Xiong</div><div class="member-alias">"Nousophos"</div></div>
-</div>
+    <h2 class="sec-title reveal">Ardent <em>Alphas</em></h2>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8100_1_orig.jpg" alt="Ardent Alphas class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #03 Laajlim "Kinjirō" Khang</p>
+    <div class="members-grid reveal">
+      <div class="member-card"><div class="member-role">#14</div><div class="member-name">Joseph Pham</div><div class="member-alias">"SASΛSHI"</div></div>
+      <div class="member-card"><div class="member-role">#15</div><div class="member-name">Sonny Hang</div><div class="member-alias">"Sirius"</div></div>
+      <div class="member-card"><div class="member-role">#16</div><div class="member-name">Steven Tran</div><div class="member-alias">"Crescendø"</div></div>
+      <div class="member-card"><div class="member-role">#17</div><div class="member-name">Chris Chunh</div><div class="member-alias">"ΛPEX"</div></div>
+      <div class="member-card"><div class="member-role">#18</div><div class="member-name">Taha Rizvi</div><div class="member-alias">"Hinotori"</div></div>
+      <div class="member-card"><div class="member-role">#19</div><div class="member-name">Isaac Vo</div><div class="member-alias">"Kairōs"</div></div>
+      <div class="member-card"><div class="member-role">#20</div><div class="member-name">Ryan Jeo</div><div class="member-alias">"Fujiwara"</div></div>
+      <div class="member-card"><div class="member-role">#21</div><div class="member-name">Keng Xiong</div><div class="member-alias">"Nousophos"</div></div>
+    </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">3rd Class</div>
     <h2 class="sec-title reveal">Blooming <em>Betas</em></h2>
-  <div class="class-photo reveal">
-    <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/1b7cea07-7d61-483b-bb01-3d24ddf10f9c-1-105-c-2_orig.jpg" alt="Blooming Betas class photo">
-  </div>
-    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">Crossed under the guidance of #12 Kevyn "KΛZE" Le</p>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/1b7cea07-7d61-483b-bb01-3d24ddf10f9c-1-105-c-2_orig.jpg" alt="Blooming Betas class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #12 Kevyn "KΛZE" Le</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#22</div><div class="member-name">Stephen Tolentino</div><div class="member-alias">"kaizen"</div></div>
       <div class="member-card"><div class="member-role">#23</div><div class="member-name">Xanyej Yang</div><div class="member-alias">"polaris"</div></div>
     </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">4th Class</div>
     <h2 class="sec-title reveal">Gallant <em>Gammas</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/gammaprof_orig.jpg" alt="Gallant Gammas class photo">
-</div>
-
-<p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">
-  Crossed under the guidance of #11 Thang "Lycan" Nguyen
-</p>
-
-<div class="members-grid reveal">
-  <div class="member-card"><div class="member-role">#24</div><div class="member-name">Saif Azmi</div><div class="member-alias">"Gladiolus"</div></div>
-  <div class="member-card"><div class="member-role">#25</div><div class="member-name">CJ Figueras</div><div class="member-alias">"KΛYØ"</div></div>
-  <div class="member-card"><div class="member-role">#26</div><div class="member-name">Charlie Nguyen</div><div class="member-alias">"Ignite"</div></div>
-  <div class="member-card"><div class="member-role">#27</div><div class="member-name">Peter Nguyen</div><div class="member-alias">"SUNDΛRA"</div></div>
-</div>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/gammaprof_orig.jpg" alt="Gallant Gammas class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #11 Thang "Lycan" Nguyen</p>
+    <div class="members-grid reveal">
+      <div class="member-card"><div class="member-role">#24</div><div class="member-name">Saif Azmi</div><div class="member-alias">"Gladiolus"</div></div>
+      <div class="member-card"><div class="member-role">#25</div><div class="member-name">CJ Figueras</div><div class="member-alias">"KΛYØ"</div></div>
+      <div class="member-card"><div class="member-role">#26</div><div class="member-name">Charlie Nguyen</div><div class="member-alias">"Ignite"</div></div>
+      <div class="member-card"><div class="member-role">#27</div><div class="member-name">Peter Nguyen</div><div class="member-alias">"SUNDΛRA"</div></div>
+    </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">5th Class</div>
     <h2 class="sec-title reveal">Delta <em>Dynasty</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8102_orig.jpg" alt="Gallant Gammas class photo">
-</div>
-    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">Crossed under the guidance of #02 Minh "FLΛRE" Lu</p>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8102_orig.jpg" alt="Delta Dynasty class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #02 Minh "FLΛRE" Lu</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#28</div><div class="member-name">Sean Cheng</div><div class="member-alias">"Zephyrōs"</div></div>
       <div class="member-card"><div class="member-role">#29</div><div class="member-name">Andrew Seo</div><div class="member-alias">"Ophiōcus"</div></div>
@@ -979,14 +706,10 @@ footer {
     </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">6th Class</div>
     <h2 class="sec-title reveal">Epsilon <em>Empÿrean</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/untitled-1-9_orig.jpg" alt="Gallant Gammas class photo">
-</div> 
-    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">Crossed under the guidance of #24 Saif "Gladiolus" Azmi</p>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/untitled-1-9_orig.jpg" alt="Epsilon Empyrean class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #24 Saif "Gladiolus" Azmi</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#35</div><div class="member-name">Udonxai Xiong</div><div class="member-alias">"OMNIΛ"</div></div>
       <div class="member-card"><div class="member-role">#36</div><div class="member-name">Landon Hong</div><div class="member-alias">"AIZΛWA"</div></div>
@@ -994,14 +717,10 @@ footer {
     </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">7th Class</div>
     <h2 class="sec-title reveal">Zeta <em>Zūttø</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8096_orig.jpg" alt="Gallant Gammas class photo">
-</div>
-    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">Crossed under the guidance of #19 Isaac "Kairōs" Vo and #25 CJ "KΛYØ" Figueras</p>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8096_orig.jpg" alt="Zeta Zutto class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #19 Isaac "Kairōs" Vo and #25 CJ "KΛYØ" Figueras</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#38</div><div class="member-name">Martin De Leon</div><div class="member-alias">"BΛYEK"</div></div>
       <div class="member-card"><div class="member-role">#39</div><div class="member-name">Carel Tulus</div><div class="member-alias">"kalon"</div></div>
@@ -1011,14 +730,10 @@ footer {
     </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">8th Class</div>
     <h2 class="sec-title reveal">Eta <em>Eclipse</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8730-2_orig.jpg" alt="Gallant Gammas class photo">
-</div>
-    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">Crossed under the guidance of #21 Keng "Nousophos" Xiong, #27 Peter "SUNDΛRA" Nguyen, and #30 A Lee "Alkaios" Xiong</p>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8730-2_orig.jpg" alt="Eta Eclipse class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #21 Keng "Nousophos" Xiong, #27 Peter "SUNDΛRA" Nguyen, and #30 A Lee "Alkaios" Xiong</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#43</div><div class="member-name">Advait Thakore</div><div class="member-alias">"UKIYO"</div></div>
       <div class="member-card"><div class="member-role">#44</div><div class="member-name">Adrian Mendoza</div><div class="member-alias">"SOLCHANDRA"</div></div>
@@ -1028,14 +743,10 @@ footer {
     </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">9th Class</div>
     <h2 class="sec-title reveal">Tetsu <em>Theta</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/compressed-dscf1931_orig.jpg" alt="Gallant Gammas class photo">
-</div>
-    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">Crossed under the guidance of #26 Charlie "Ignite" Nguyen</p>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/compressed-dscf1931_orig.jpg" alt="Tetsu Theta class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #26 Charlie "Ignite" Nguyen</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#48</div><div class="member-name">Benjamin Sebastian</div><div class="member-alias">"Irιdιus"</div></div>
       <div class="member-card"><div class="member-role">#49</div><div class="member-name">Jonah Sitorus</div><div class="member-alias">"thymos"</div></div>
@@ -1047,16 +758,10 @@ footer {
     </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">10th Class</div>
     <h2 class="sec-title reveal">Iota <em>Ignis</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/screenshot-2026-01-03-170232_orig.png" alt="Gallant Gammas class photo">
-</div>
-
-<p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">Crossed under the guidance of #28 Sean "Zephyrōs" Cheng</p>
-
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/screenshot-2026-01-03-170232_orig.png" alt="Iota Ignis class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #28 Sean "Zephyrōs" Cheng</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#55</div><div class="member-name">Anieli Abalo</div><div class="member-alias">"kelefera"</div></div>
       <div class="member-card"><div class="member-role">#56</div><div class="member-name">Daniel Hasnan</div><div class="member-alias">"Arōha"</div></div>
@@ -1064,14 +769,10 @@ footer {
     </div>
 
     <div class="hr reveal"></div>
-
     <div class="sec-label reveal">11th Class</div>
     <h2 class="sec-title reveal">Kåtaka <em>Kappa</em></h2>
-
-<div class="class-photo reveal">
-  <img src="https://i.imgur.com/084HOp6.png" alt="Gallant Gammas class photo">
-</div>
-    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:-20px">Crossed under the guidance of #37 Brandon "Kaleidō" Vi</p>
+    <div class="class-photo reveal"><img src="https://i.imgur.com/084HOp6.png" alt="Kataka Kappa class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #37 Brandon "Kaleidō" Vi</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#58</div><div class="member-name">James Xing</div><div class="member-alias">"Suryōku"</div></div>
       <div class="member-card"><div class="member-role">#59</div><div class="member-name">Albert Ma</div><div class="member-alias">"AUGURION"</div></div>
@@ -1080,50 +781,48 @@ footer {
       <div class="member-card"><div class="member-role">#62</div><div class="member-name">Jeremy Wu</div><div class="member-alias">"Skykurō"</div></div>
       <div class="member-card"><div class="member-role">#62</div><div class="member-name">Ben O'Leary</div><div class="member-alias">"λumi"</div></div>
     </div>
-
   </div>
+
+   <div class="hr reveal"></div>
+    <div class="sec-label reveal">12th Class</div>
+    <h2 class="sec-title reveal">Mu <em>Mydäs</em></h2>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/1b7cea07-7d61-483b-bb01-3d24ddf10f9c-1-105-c-2_orig.jpg" alt="Blooming Betas class photo"></div>
+    <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #38 Martin "BΛYEK" De Leon</p>
+    <div class="members-grid reveal">
+      <div class="member-card"><div class="member-role">#63</div><div class="member-name">Vincent Zheng</div><div class="member-alias">"Pyros"</div></div>
+      <div class="member-card"><div class="member-role">#64</div><div class="member-name">Alex Yang</div><div class="member-alias">"Sylaris"</div></div>
+    </div>
+
+
   <footer>
     <div class="footer-brand">
-    <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
-
-    <div>
-      <div class="footer-logo">ΛΦΕ · UMN</div>
-      <div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div>
+      <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
+      <div><div class="footer-logo">ΛΦΕ · UMN</div><div class="footer-text">Lambda Phi Epsilon · Associate Chapter<br>University of Minnesota · Est. 2020</div></div>
     </div>
-  </div>
-  <ul class="footer-links">
-    <li><a onclick="goPage('org')">Organization</a></li>
-    <li><a onclick="goPage('chapter')">Our Chapter</a></li>
-    <li><a onclick="goPage('active')">Active House</a></li>
-    <li><a onclick="goPage('why')">Why Lambdas?</a></li>
-    <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
-  </ul>
+    <ul class="footer-links">
+      <li><a onclick="goPage('org')">Organization</a></li>
+      <li><a onclick="goPage('chapter')">Our Chapter</a></li>
+      <li><a onclick="goPage('active')">Active House</a></li>
+      <li><a onclick="goPage('why')">Why Lambdas?</a></li>
+      <li><a href="https://www.instagram.com/umnlphie/" target="_blank">Instagram</a></li>
+    </ul>
   </footer>
 </div><!-- /pg-brothers -->
 
 <script>
 const ALL_PAGES = ['home','org','chapter','active','why','brothers'];
-
 function goPage(id) {
-  ALL_PAGES.forEach(p => {
-    document.getElementById('pg-' + p).classList.remove('active');
-  });
-  document.getElementById('pg-' + id).classList.add('active');
-  window.scrollTo({top: 0, behavior: 'instant'});
-  // trigger reveals on new page
+  ALL_PAGES.forEach(p => document.getElementById('pg-'+p).classList.remove('active'));
+  document.getElementById('pg-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
   setTimeout(() => {
-    document.getElementById('pg-' + id).querySelectorAll('.reveal').forEach(el => {
+    document.getElementById('pg-'+id).querySelectorAll('.reveal').forEach(el => {
       el.classList.remove('visible');
       revealObserver.observe(el);
     });
   }, 30);
 }
-
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-
-// Scroll reveal
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
@@ -1132,21 +831,12 @@ const revealObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// Nav shadow
 window.addEventListener('scroll', () => {
-  document.getElementById('main-nav').style.boxShadow =
-    window.scrollY > 40 ? '0 4px 40px rgba(0,0,0,0.6)' : 'none';
-
+  document.getElementById('main-nav').style.boxShadow = window.scrollY > 40 ? '0 4px 40px rgba(0,0,0,0.6)' : 'none';
   const heroImage = document.querySelector('.hero-image');
   if (!heroImage) return;
-
-  const fadePoint = 800;
-  const opacity = Math.max(0, 0.35 - window.scrollY / fadePoint);
-
-  heroImage.style.opacity = opacity;
+  heroImage.style.opacity = Math.max(0, 0.75 - window.scrollY / 800);
 });
 </script>
 </body>
