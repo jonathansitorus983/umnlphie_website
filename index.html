@@ -186,6 +186,41 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 .member-ig{font-size:11px;color:var(--text2);text-decoration:none;margin-top:5px;display:block;transition:color .2s}
 .member-ig:hover{color:var(--gold)}
 
+
+/* ACTIVE HOUSE IMAGE SLOTS */
+.member-photo{
+  width:100%;
+  aspect-ratio:4/5;
+  margin-bottom:16px;
+  border-radius:3px;
+  overflow:hidden;
+  background:linear-gradient(160deg,var(--dark3) 0%,var(--dark4) 100%);
+  border:1px solid var(--border2);
+}
+.member-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+  filter:grayscale(12%);
+  transition:transform .35s ease,filter .35s ease;
+}
+.member-card:hover .member-photo img{
+  transform:scale(1.04);
+  filter:grayscale(0%);
+}
+.member-photo-placeholder{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(245,240,232,.35);
+  font-family:var(--fd);
+  font-size:42px;
+}
+
 /* PORTRAIT CARDS */
 .portrait-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:14px}
 .portrait-card{background:var(--dark2);border:1px solid var(--border2);border-radius:4px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
@@ -248,74 +283,17 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   .portrait-grid{grid-template-columns:1fr}
 }
 
+
 /* SHARPER HEADERS + CLEANER HERO IMAGES */
-.hero-title,
-.page-title,
-.sec-title,
-.join-title,
-.member-name,
-.portrait-name {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.hero-title {
-  font-size: clamp(48px, 8vw, 96px);
-  font-weight: 400;
-  letter-spacing: 0.4px;
-}
-
-.page-title {
-  font-size: clamp(52px, 8vw, 96px);
-  font-weight: 400;
-  letter-spacing: 0.35px;
-  text-shadow: 0 4px 26px rgba(0,0,0,0.55);
-}
-
-.sec-title {
-  font-size: clamp(34px, 5vw, 64px);
-  line-height: 1.06;
-  letter-spacing: 0.2px;
-  text-wrap: balance;
-}
-
-.page-hero {
-  min-height: 54vh;
-}
-
-.page-hero-bg,
-.hero-image,
-.mission-bg,
-.join-bg {
-  image-rendering: auto;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-.org-hero-img,
-.chapter-hero-img,
-.why-hero-img,
-.active-hero-img,
-.brothers-hero-img {
-  filter: saturate(1.02) contrast(1.04);
-}
-
-.class-photo img,
-.photo-item img,
-.img-frame img {
-  filter: grayscale(6%) contrast(1.03);
-}
-
-.eyebrow {
-  text-shadow: 0 2px 14px rgba(0,0,0,0.6);
-}
-
-@media(max-width:700px){
-  .page-title{font-size:clamp(42px, 14vw, 68px)}
-  .hero-title{font-size:clamp(42px, 14vw, 76px)}
-  .sec-title{font-size:clamp(30px, 10vw, 48px)}
-}
+.hero-image{opacity:.95;background-size:cover;background-position:center center;image-rendering:auto}
+.page-hero-bg{background-size:cover;background-repeat:no-repeat;filter:none;transform:translateZ(0)}
+.hero-title,.page-title,.sec-title,.join-title{font-weight:400;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-wrap:balance}
+.hero-title{font-size:clamp(48px,8vw,96px);letter-spacing:.4px}
+.page-title{font-size:clamp(52px,8vw,96px);letter-spacing:.4px}
+.sec-title{font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:.25px}
+.sec-label{font-size:11px;letter-spacing:4.5px}
+.member-ig{display:block;margin-top:8px;color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:.5px;transition:opacity .2s ease,color .2s ease;word-break:break-word}
+.member-ig:hover{opacity:.8;color:var(--gold-light)}
 
 </style>
 </head>
@@ -560,66 +538,207 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
       <h1 class="page-title">Active <em>House</em></h1>
     </div>
   </div>
+
   <div class="wrap">
     <div class="sec-label reveal">Leadership</div>
     <h2 class="sec-title reveal">Executive <em>Board</em></h2>
-    <div class="portrait-grid reveal">
-      <div class="portrait-card">
-        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="portrait-info"><div class="portrait-role">President</div><div class="portrait-name">Martin De Leon</div><div class="portrait-alias">"BAYEK"</div><a href="mailto:deleo099@umn.edu" class="portrait-email">deleo099@umn.edu</a></div>
+
+    <div class="members-grid reveal">
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">President</div>
+        <div class="member-name">Austin Yang</div>
+        <div class="member-alias">&quot;Grimsanø&quot;</div>
+        <a href="https://www.instagram.com/grim.ostin/" target="_blank" class="member-ig">@grim.ostin</a>
       </div>
-      <div class="portrait-card">
-        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="portrait-info"><div class="portrait-role">Internal VP</div><div class="portrait-name">Austin Yang</div><div class="portrait-alias">"Grimsanø"</div><a href="mailto:yang7364@umn.edu" class="portrait-email">yang7364@umn.edu</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Internal Vice President</div>
+        <div class="member-name">Santosh Veluri</div>
+        <div class="member-alias">&quot;Remediōs&quot;</div>
+        <a href="https://www.instagram.com/santoshveluri/" target="_blank" class="member-ig">@santosh_veluri</a>
       </div>
-      <div class="portrait-card">
-        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="portrait-info"><div class="portrait-role">External VP</div><div class="portrait-name">Jonathan Sitorus</div><div class="portrait-alias">"thymos"</div><a href="mailto:sitor008@umn.edu" class="portrait-email">sitor008@umn.edu</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">External Vice President</div>
+        <div class="member-name">James Xing</div>
+        <div class="member-alias">&quot;Suryōku&quot;</div>
+        <a href="https://www.instagram.com/imxingtheroad/" target="_blank" class="member-ig">@imxingtheroad</a>
       </div>
-      <div class="portrait-card">
-        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="portrait-info"><div class="portrait-role">VP of Records</div><div class="portrait-name">Christian Delos Santos</div><div class="portrait-alias">"SERAPHINIA"</div><a href="mailto:delos074@umn.edu" class="portrait-email">delos074@umn.edu</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">VP of Records</div>
+        <div class="member-name">Ben O'Leary</div>
+        <div class="member-alias">&quot;λumi&quot;</div>
+        <a href="https://www.instagram.com/bmj.7/" target="_blank" class="member-ig">@bmj.7</a>
       </div>
-      <div class="portrait-card">
-        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="portrait-info"><div class="portrait-role">VP of Finance</div><div class="portrait-name">Khoi Nguyen</div><div class="portrait-alias">"kodo"</div><a href="mailto:nguy4194@umn.edu" class="portrait-email">nguy4194@umn.edu</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">VP of Finance</div>
+        <div class="member-name">Vincent Zheng</div>
+        <div class="member-alias">&quot;Pyros&quot;</div>
+        <a href="https://www.instagram.com/vincent_zheng/" target="_blank" class="member-ig">@vincent_zheng</a>
       </div>
-      <div class="portrait-card">
-        <div class="portrait-img-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="portrait-info"><div class="portrait-role">VP of Standards</div><div class="portrait-name">Advait Thakore</div><div class="portrait-alias">"Ukiyō"</div><a href="mailto:thako007@umn.edu" class="portrait-email">thako007@umn.edu</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">VP of Standards</div>
+        <div class="member-name">John Amos</div>
+        <div class="member-alias">&quot;KABIGON&quot;</div>
+        <a href="https://www.instagram.com/snorlax_4000/" target="_blank" class="member-ig">@snorlax_4000</a>
       </div>
     </div>
 
     <div class="hr reveal"></div>
+
     <div class="sec-label reveal">Operations</div>
     <h2 class="sec-title reveal">Preliminary <em>Board</em></h2>
 
     <div class="sub-head reveal">External</div>
     <div class="members-grid reveal">
-      <div class="member-card"><div class="member-role">Public Relations</div><div class="member-name">Danial Hasnan</div><div class="member-alias">"Arōha"</div><a href="mailto:hasna005@umn.edu" class="member-email">hasna005@umn.edu</a></div>
-      <div class="member-card"><div class="member-role">Social Coordinator</div><div class="member-name">James Xing</div><div class="member-alias">"Suryōku"</div><a href="mailto:xing0130@umn.edu" class="member-email">xing0130@umn.edu</a></div>
-      <div class="member-card"><div class="member-role">Multimedia Coordinator</div><div class="member-name">Jonathan Sitorus</div><div class="member-alias">"thymos"</div><a href="mailto:sitor008@umn.edu" class="member-email">sitor008@umn.edu</a></div>
-      <div class="member-card"><div class="member-role">Performance Coordinator</div><div class="member-name">Advait Thakore</div><div class="member-alias">"Ukiyō"</div><a href="mailto:thako007@umn.edu" class="member-email">thako007@umn.edu</a></div>
-      <div class="member-card"><div class="member-role">Philanthropy Coordinator</div><div class="member-name">Kenji Vang</div><div class="member-alias">"Galahād"</div><a href="mailto:vang1505@umn.edu" class="member-email">vang1505@umn.edu</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Public Relations</div>
+        <div class="member-name">Danial Hasnan</div>
+        <div class="member-alias">&quot;Arōha&quot;</div>
+        <a href="https://www.instagram.com/dan.hsnn/" target="_blank" class="member-ig">@dan.hsnn</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Public Relations</div>
+        <div class="member-name">Vincent Zheng</div>
+        <div class="member-alias">&quot;Pyros&quot;</div>
+        <a href="https://www.instagram.com/vincent_zheng/" target="_blank" class="member-ig">@vincent_zheng</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Social Coordinator</div>
+        <div class="member-name">James Xing</div>
+        <div class="member-alias">&quot;Suryōku&quot;</div>
+        <a href="https://www.instagram.com/imxingtheroad/" target="_blank" class="member-ig">@imxingtheroad</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Multimedia Coordinator</div>
+        <div class="member-name">Jonah Sitorus</div>
+        <div class="member-alias">&quot;thymos&quot;</div>
+        <a href="https://www.instagram.com/jonah_si_torus/" target="_blank" class="member-ig">@jonah_si_torus</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Performance Coordinator</div>
+        <div class="member-name">Hmoov Her</div>
+        <div class="member-alias">&quot;KITHARA&quot;</div>
+        <a href="https://www.instagram.com/huhmoov/" target="_blank" class="member-ig">@huhmoov</a>
+      </div>
     </div>
+
     <div class="sub-head reveal">Recruitment</div>
     <div class="members-grid reveal">
-      <div class="member-card"><div class="member-role">Co-Recruitment</div><div class="member-name">Hmoov Her</div><div class="member-alias">"KITHARA"</div><a href="mailto:herxx518@umn.edu" class="member-email">herxx518@umn.edu</a><a href="https://www.instagram.com/huhmoov/" target="_blank" class="member-ig">@huhmoov</a></div>
-      <div class="member-card"><div class="member-role">Co-Recruitment</div><div class="member-name">John Amos</div><div class="member-alias">"KABIGON"</div><a href="mailto:amos0042@umn.edu" class="member-email">amos0042@umn.edu</a><a href="https://www.instagram.com/snorlax_4000/" target="_blank" class="member-ig">@snorlax_4000</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Co-Recruitment</div>
+        <div class="member-name">Nomlauj Vue</div>
+        <div class="member-alias">&quot;kokoro&quot;</div>
+        <a href="https://www.instagram.com/masyer_ooway/" target="_blank" class="member-ig">@masyer_ooway</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Co-Recruitment</div>
+        <div class="member-name">Khoi Nguyen</div>
+        <div class="member-alias">&quot;kodo&quot;</div>
+        <a href="https://www.instagram.com/khoi2910/" target="_blank" class="member-ig">@khoi2910</a>
+      </div>
     </div>
+
     <div class="sub-head reveal">Internal</div>
     <div class="members-grid reveal">
-      <div class="member-card"><div class="member-role">Service Coordinator</div><div class="member-name">Udonxai Xiong</div><div class="member-alias">"OMNIA"</div><a href="mailto:xiong583@umn.edu" class="member-email">xiong583@umn.edu</a></div>
-      <div class="member-card"><div class="member-role">Wellness Coordinator</div><div class="member-name">Nomlauj Vue</div><div class="member-alias">"kokoro"</div><a href="mailto:vuex0170@umn.edu" class="member-email">vuex0170@umn.edu</a></div>
-      <div class="member-card"><div class="member-role">Lambda Unity</div><div class="member-name">Albert Ma</div><div class="member-alias">"AUGURION"</div><a href="mailto:maxx1719@umn.edu" class="member-email">maxx1719@umn.edu</a></div>
-      <div class="member-card"><div class="member-role">Alumni Unity</div><div class="member-name">Advait Thakore</div><div class="member-alias">"Ukiyō"</div><a href="mailto:thako007@umn.edu" class="member-email">thako007@umn.edu</a></div>
-      <div class="member-card"><div class="member-role">Philanthropy Coordinator</div><div class="member-name">Jeremy Wu</div><div class="member-alias">"Skyurō"</div><a href="mailto:wuxx0701@umn.edu" class="member-email">wuxx0701@umn.edu</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Service Coordinator</div>
+        <div class="member-name">Udonxai Xiong</div>
+        <div class="member-alias">&quot;OMNIA&quot;</div>
+        <a href="mailto:xiong583@umn.edu" class="member-email">xiong583@umn.edu</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Wellness Coordinator</div>
+        <div class="member-name">Nomlauj Vue</div>
+        <div class="member-alias">&quot;kokoro&quot;</div>
+        <a href="https://www.instagram.com/masyer_ooway/" target="_blank" class="member-ig">@masyer_ooway</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Lambda Unity</div>
+        <div class="member-name">Albert Ma</div>
+        <div class="member-alias">&quot;AUGURION&quot;</div>
+        <a href="mailto:maxx1719@umn.edu" class="member-email">maxx1719@umn.edu</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Alumni Unity</div>
+        <div class="member-name">Advait Thakore</div>
+        <div class="member-alias">&quot;Ukiyō&quot;</div>
+        <a href="mailto:thako007@umn.edu" class="member-email">thako007@umn.edu</a>
+      </div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Philanthropy Coordinator</div>
+        <div class="member-name">Jeremy Wu</div>
+        <div class="member-alias">&quot;Skyurō&quot;</div>
+        <a href="mailto:wuxx0701@umn.edu" class="member-email">wuxx0701@umn.edu</a>
+      </div>
     </div>
+
     <div class="sub-head reveal">Finance</div>
     <div class="members-grid reveal">
-      <div class="member-card"><div class="member-role">Co-Fundraising Coordinator</div><div class="member-name">Ben O'Leary</div><div class="member-alias">"λumi"</div><a href="mailto:olea0052@umn.edu" class="member-email">olea0052@umn.edu</a></div>
+      <div class="member-card">
+        <div class="member-photo">
+          <img src="images/active-house/member-photo.jpg" alt="Active house member photo">
+        </div>
+        <div class="member-role">Co-Fundraising Coordinator</div>
+        <div class="member-name">Ben O'Leary</div>
+        <div class="member-alias">&quot;λumi&quot;</div>
+        <a href="https://www.instagram.com/bmj.7/" target="_blank" class="member-ig">@bmj.7</a>
+      </div>
     </div>
   </div>
+
   <footer>
     <div class="footer-brand">
       <img src="https://i.imgur.com/rn95nab.jpeg" alt="Lambda Phi Epsilon UMN logo" class="footer-logo-img">
@@ -634,7 +753,6 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
     </ul>
   </footer>
 </div><!-- /pg-active -->
-
 <!-- ===================== PAGE: WHY LAMBDAS ===================== -->
 <div id="pg-why" class="page">
   <div class="page-hero">
@@ -851,16 +969,15 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
       <div class="member-card"><div class="member-role">#62</div><div class="member-name">Ben O'Leary</div><div class="member-alias">"λumi"</div></div>
     </div>
 
-   <div class="hr reveal"></div>
+    <div class="hr reveal"></div>
     <div class="sec-label reveal">12th Class</div>
     <h2 class="sec-title reveal">Mu <em>Mydäs</em></h2>
-    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/1b7cea07-7d61-483b-bb01-3d24ddf10f9c-1-105-c-2_orig.jpg" alt="Mu Mydas class photo"></div>
+    <div class="class-photo reveal"><img src="https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/1b7cea07-7d61-483b-bb01-3d24ddf10f9c-1-105-c-2_orig.jpg" alt="Blooming Betas class photo"></div>
     <p class="reveal" style="font-size:13px;color:var(--text2);letter-spacing:1px;margin-bottom:28px;margin-top:8px">Crossed under the guidance of #38 Martin "BΛYEK" De Leon</p>
     <div class="members-grid reveal">
       <div class="member-card"><div class="member-role">#63</div><div class="member-name">Vincent Zheng</div><div class="member-alias">"Pyros"</div></div>
       <div class="member-card"><div class="member-role">#64</div><div class="member-name">Alex Yang</div><div class="member-alias">"Sylaris"</div></div>
     </div>
-
   </div>
 
   <footer>
