@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<!--
+  Lambda Phi Epsilon — University of Minnesota
+  Single-page chapter website with:
+  - Fixed desktop and mobile navigation
+  - Multiple page sections shown/hidden with JavaScript
+  - Responsive layouts for desktop, tablet, and mobile
+  - Scroll-triggered reveal animations
+  - Active House and chapter-member profile cards
+
+  Important:
+  Keep the images/ folder beside this HTML file so local image paths continue to work.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,16 +31,19 @@
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--text);font-family:var(--fb);font-weight:300;overflow-x:hidden}
 
-/* CLASS PHOTO */
+/* CLASS PHOTO
+   Controls the large group photo shown above each chapter class roster. */
 .class-photo{width:100%;max-width:760px;margin:-18px 0 32px;border:1px solid var(--border2);border-radius:4px;overflow:hidden;background:var(--dark2)}
 .class-photo img{width:100%;height:auto;display:block;object-fit:cover;filter:grayscale(10%)}
 
-/* HERO IMAGE */
+/* HOME HERO IMAGE
+   Full-screen background image with dark overlays for readable text. */
 .hero-image{position:absolute;inset:0;background-image:linear-gradient(rgba(12,12,12,0.55),rgba(12,12,12,0.88)),url("https://i.imgur.com/0MhDjPO.jpeg");background-size:cover;background-position:center;opacity:0.75;z-index:0;transition:opacity 0.2s linear}
 .hero-content,.hero-greek,.hero-scroll{z-index:2}
 .hero-bg{z-index:1}
 
-/* BENEFIT CARDS */
+/* WHY LAMBDAS BENEFIT CARDS
+   Three responsive cards describing fraternity benefits. */
 .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:50px auto;max-width:1180px}
 .benefit-card{position:relative;padding:34px 28px;background:rgba(255,255,255,0.045);border:1px solid var(--border);border-radius:8px;min-height:280px;overflow:hidden;transition:transform 0.25s ease,border-color 0.25s ease,background 0.25s ease}
 .benefit-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,0.55);background:rgba(201,168,76,0.07)}
@@ -38,7 +53,8 @@ body{background:var(--black);color:var(--text);font-family:var(--fb);font-weight
 .benefit-card p{font-size:14px;line-height:1.8;color:var(--text2)}
 @media(max-width:900px){.benefits-grid{grid-template-columns:1fr}}
 
-/* NAV */
+/* DESKTOP NAVIGATION
+   Fixed navigation bar, dropdown menus, and highlighted Join Us button. */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(12,12,12,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
 .nav-logo{font-family:var(--fd);font-size:22px;font-weight:600;color:var(--gold);letter-spacing:2px;text-decoration:none;cursor:pointer}
 .nav-links{display:flex;align-items:center;gap:0;list-style:none}
@@ -60,11 +76,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .mobile-menu a:hover{color:var(--gold)}
 .mobile-close{position:absolute;top:24px;right:48px;background:none;border:none;color:var(--gold);font-size:28px;cursor:pointer;font-family:var(--fd)}
 
-/* PAGES */
+/* PAGE VISIBILITY
+   JavaScript applies .active to show one page section at a time. */
 .page{display:none}
 .page.active{display:block}
 
-/* HERO */
+/* HOME HERO
+   Main landing area, decorative Greek letters, buttons, and scroll indicator. */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:120px 24px 80px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(201,168,76,0.07) 0%,transparent 70%)}
 .hero-greek{font-family:var(--fd);font-size:clamp(80px,16vw,180px);font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(201,168,76,0.18);letter-spacing:16px;line-height:1;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;user-select:none;pointer-events:none}
@@ -83,31 +101,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .hero-scroll span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text2)}
 .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent)}
 
-/* PAGE HERO */
+/* INNER-PAGE HERO
+   Shared hero layout used by Organization, Chapter, Active House, and other pages. */
 .page-hero{min-height:58vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:calc(68px + 52px) 24px 80px;overflow:hidden}
 .page-hero-bg{position:absolute;inset:0;z-index:0}
 .page-hero-content{position:relative;z-index:1;text-align:center;margin:0 auto}
 .page-title{font-family:var(--fd);font-size:clamp(40px,7vw,80px);font-weight:300;color:var(--white);line-height:1.1}
 .page-title em{font-style:italic;color:var(--gold-light)}
 
-/* PAGE HERO BACKGROUNDS */
+/* PAGE-SPECIFIC HERO BACKGROUNDS
+   Each class assigns a different background image and focal position. */
 .org-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/background-images/700618314.jpeg");background-size:cover;background-position:center 85%;background-repeat:no-repeat}
 .chapter-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-8106.jpg");background-size:cover;background-position:center 30%;background-repeat:no-repeat}
 .why-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("images/20260205112138.JPG");background-size:cover;background-position:center 40%;background-repeat:no-repeat}
 .active-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("images/_DSC9457.JPG");background-size:cover;background-position:center 5%;background-repeat:no-repeat}
 .brothers-hero-img{background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.82)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-7411.png");background-size:cover;background-position:center 25%;background-repeat:no-repeat}
 
-/* SECTIONS */
+/* GENERAL SECTION LAYOUT
+   Shared wrappers, labels, and headings used across the site. */
 .wrap{max-width:1200px;margin:0 auto;padding:80px 48px}
 .sec-label{font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px}
 .sec-label::before{content:'';width:32px;height:1px;background:var(--gold);opacity:.5}
 .sec-title{font-family:var(--fd);font-size:clamp(28px,4vw,52px);font-weight:300;color:var(--white);line-height:1.15;margin-bottom:40px}
 .sec-title em{font-style:italic;color:var(--gold-light)}
 
-/* DIVIDER */
+/* SECTION DIVIDER */
 .hr{height:1px;background:var(--border);margin:60px 0}
 
-/* TWO COL */
+/* TWO-COLUMN CONTENT LAYOUT
+   Collapses to one column on smaller screens. */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:50px}
 .two-col p{font-size:16px;line-height:1.9;color:var(--text);margin-bottom:20px}
 .two-col p strong{color:var(--white)}
@@ -117,13 +139,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .img-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.1) 0%,transparent 60%);pointer-events:none}
 .img-caption{position:absolute;bottom:-14px;right:-14px;background:var(--dark3);border:1px solid var(--border);padding:14px 18px;font-family:var(--fd);font-size:13px;color:var(--text2);font-style:italic}
 
-/* STATS */
+/* CHAPTER STATISTICS ROW */
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-bottom:60px}
 .stat{background:var(--black);padding:44px;text-align:center}
 .stat-num{font-family:var(--fd);font-size:64px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:10px}
 .stat-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--text2)}
 
-/* PILLARS */
+/* ORGANIZATIONAL PILLAR CARDS */
 .pillars-bg{background:var(--dark)}
 .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:40px}
 .pillar{background:var(--dark);padding:40px 34px;transition:background .3s}
@@ -134,7 +156,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .pillar-title{font-family:var(--fd);font-size:24px;font-weight:400;color:var(--white);margin-bottom:12px}
 .pillar-text{font-size:14px;line-height:1.8;color:var(--text2)}
 
-/* MISSION */
+/* MISSION QUOTE SECTION
+   Uses a background image, overlay, and decorative quotation marks. */
 .mission{text-align:center;padding:100px 48px;position:relative;overflow:hidden}
 .mission-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),url("https://lambdaphiepsilon.org/wp-content/uploads/2025LFEConvention-scaled.jpeg");background-size:cover;background-position:center;opacity:0.55;z-index:0}
 .mission-content{position:relative;z-index:1}
@@ -144,7 +167,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .mission-quote::after{content:'\201D';bottom:-36px;right:0}
 .mission-sub{font-size:11px;color:var(--text2);letter-spacing:3px;text-transform:uppercase}
 
-/* FOUNDATION SECTION */
+/* MISSION, VISION, AND VALUES SECTION */
 .foundation-section{position:relative;overflow:hidden;padding:90px 32px;margin:40px auto;border-radius:8px;max-width:1180px}
 .foundation-content{position:relative;z-index:1;text-align:center}
 .foundation-content .sec-label{justify-content:center;margin-left:auto;margin-right:auto}
@@ -154,7 +177,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .foundation-content .member-card:nth-child(3){grid-column:1/-1;text-align:center}
 .foundation-content .tags{justify-content:center}
 
-/* JOIN CTA */
+/* JOIN CALL-TO-ACTION SECTION */
 .join-bg{position:relative;overflow:hidden;padding:110px 32px;background-image:linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.88)),url("https://umntclphie.weebly.com/uploads/1/4/8/3/148319477/img-7631-1_orig.jpg");background-size:cover;background-position:center;background-repeat:no-repeat}
 .join-greek{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--fd);font-size:clamp(120px,22vw,300px);font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(201,168,76,0.05);pointer-events:none;letter-spacing:20px;white-space:nowrap}
 .join-inner{position:relative;z-index:1;text-align:center;max-width:640px;margin:0 auto}
@@ -162,7 +185,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 .join-title em{font-style:italic;color:var(--gold-light)}
 .join-text{font-size:15px;line-height:1.8;color:var(--text2);margin-bottom:40px}
 
-/* FOOTER */
+/* SHARED FOOTER */
 footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;position:relative;z-index:1}
 .footer-logo{font-family:var(--fd);font-size:20px;font-weight:600;color:var(--gold);letter-spacing:2px}
 .footer-text{font-size:12px;color:var(--text2);line-height:1.7;margin-top:8px}
@@ -172,7 +195,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 .footer-links a{font-size:11px;color:var(--text2);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:color .2s;cursor:pointer}
 .footer-links a:hover{color:var(--gold)}
 
-/* MEMBER CARDS */
+/* MEMBER CARD BASE STYLES
+   Used for officers, coordinators, and chapter-member listings. */
 .members-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .member-card{background:var(--dark2);border:1px solid var(--border2);border-radius:3px;padding:22px;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
 .member-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);opacity:0;transition:opacity .2s}
@@ -187,7 +211,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 .member-ig:hover{color:var(--gold)}
 
 
-/* ACTIVE HOUSE IMAGE SLOTS */
+/* ACTIVE HOUSE PROFILE PHOTOS
+   Maintains consistent portrait dimensions and hover effects. */
 .member-photo{
   width:100%;
   aspect-ratio:4/5;
@@ -221,7 +246,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   font-size:42px;
 }
 
-/* PORTRAIT CARDS */
+/* ALTERNATE PORTRAIT CARD COMPONENT
+   Retained for future profile layouts. */
 .portrait-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:14px}
 .portrait-card{background:var(--dark2);border:1px solid var(--border2);border-radius:4px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
 .portrait-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);opacity:0;transition:opacity .2s;z-index:1}
@@ -240,31 +266,33 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 
 .sub-head{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--text2);margin:48px 0 18px;padding-bottom:12px;border-bottom:1px solid var(--border2)}
 
-/* VALUE TAGS */
+/* CORE VALUE TAGS */
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .tag{padding:5px 14px;border:1px solid var(--border);border-radius:2px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
 
-/* PHOTO GRID */
+/* CHAPTER PHOTO GALLERY */
 .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:860px}
 .photo-item{border-radius:3px;overflow:hidden;border:1px solid var(--border2);aspect-ratio:4/3;background:var(--dark2)}
 .photo-item img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%);transition:transform .4s}
 .photo-item:hover img{transform:scale(1.04)}
 
-/* VIDEO */
+/* EMBEDDED VIDEO AND FALLBACK CARD */
 .video-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:3px;overflow:hidden;border:1px solid var(--border2)}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 .video-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:var(--dark2);border:1px solid var(--border2);border-radius:3px;min-height:260px;padding:40px;text-align:center}
 .video-fallback p{font-size:13px;color:var(--text2)}
 
-/* REVEAL */
+/* SCROLL REVEAL STATES
+   Elements begin hidden and become visible through IntersectionObserver. */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ANIMATIONS */
+/* KEYFRAME ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
 
-/* RESPONSIVE */
+/* RESPONSIVE BREAKPOINTS
+   Adjust navigation, grids, spacing, and image layouts for smaller screens. */
 @media(max-width:900px){
   nav{padding:0 24px}
   .nav-links{display:none}
@@ -284,7 +312,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 }
 
 
-/* SHARPER HEADERS + CLEANER HERO IMAGES */
+/* TYPOGRAPHY AND IMAGE REFINEMENTS
+   Final overrides for sharper headings and cleaner hero rendering. */
 .hero-image{opacity:.95;background-size:cover;background-position:center center;image-rendering:auto}
 .page-hero-bg{background-size:cover;background-repeat:no-repeat;filter:none;transform:translateZ(0)}
 .hero-title,.page-title,.sec-title,.join-title{font-weight:400;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-wrap:balance}
@@ -299,7 +328,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 </head>
 <body>
 
-<!-- NAV -->
+<!-- DESKTOP NAVIGATION: primary links, dropdown menus, and Join Us CTA -->
 <nav id="main-nav">
   <div class="nav-logo" onclick="goPage('home')">ΛΦΕ</div>
   <ul class="nav-links">
@@ -327,7 +356,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
+<!-- MOBILE NAVIGATION: full-screen menu opened by the hamburger button -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
   <a onclick="goPage('home');toggleMenu()">Home</a>
@@ -340,7 +369,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSerx7kRfJUA6RfQIZ31fdmBRpMyaQpcfl1fgpjnzZYY3oKhpg/viewform?usp=header" target="_blank">Join Us</a>
 </div>
 
-<!-- ===================== PAGE: HOME ===================== -->
+<!-- ===================== PAGE: HOME =====================
+     Landing page with hero, introduction, statistics, mission, and recruitment CTA. -->
 <div id="pg-home" class="page active">
   <div class="hero">
     <div class="hero-bg"></div>
@@ -359,6 +389,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
     <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
   </div>
 
+  <!-- INTRODUCTION: overview of Lambda Phi Epsilon and the UMN chapter -->
   <div class="wrap">
     <div class="sec-label reveal">What is Lambda Phi Epsilon</div>
     <h2 class="sec-title reveal">The World's Largest<br><em>Asian-Interest Fraternity</em></h2>
@@ -378,6 +409,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
     </div>
   </div>
 
+  <!-- QUICK STATS: chapter and national organization highlights -->
   <div class="wrap" style="padding-top:0">
     <div class="stats-row reveal">
       <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Brothers Worldwide</div></div>
@@ -386,6 +418,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
     </div>
   </div>
 
+  <!-- MISSION STATEMENT: full-width quote section -->
   <div class="mission">
     <div class="mission-bg"></div>
     <div class="mission-content">
@@ -394,6 +427,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
     </div>
   </div>
 
+  <!-- FOUNDATION: mission, vision, and core values -->
   <section class="foundation-section reveal">
     <div class="foundation-content">
       <div class="sec-label reveal">Fraternity Lore</div>
@@ -406,6 +440,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
     </div>
   </section>
 
+  <!-- RECRUITMENT CTA: directs visitors to the chapter interest form -->
   <div class="join-bg">
     <div class="join-greek">ΛΦΕ</div>
     <div class="join-inner">
@@ -434,7 +469,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   </footer>
 </div><!-- /pg-home -->
 
-<!-- ===================== PAGE: OUR ORGANIZATION ===================== -->
+<!-- ===================== PAGE: OUR ORGANIZATION =====================
+     National history, mission, values, and philanthropy information. -->
 <div id="pg-org" class="page">
   <div class="page-hero">
     <div class="page-hero-bg org-hero-img"></div>
@@ -481,7 +517,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   </footer>
 </div><!-- /pg-org -->
 
-<!-- ===================== PAGE: OUR CHAPTER ===================== -->
+<!-- ===================== PAGE: OUR CHAPTER =====================
+     Local chapter history, founding story, video, and photo gallery. -->
 <div id="pg-chapter" class="page">
   <div class="page-hero">
     <div class="page-hero-bg chapter-hero-img"></div>
@@ -529,7 +566,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   </footer>
 </div><!-- /pg-chapter -->
 
-<!-- ===================== PAGE: ACTIVE HOUSE ===================== -->
+<!-- ===================== PAGE: ACTIVE HOUSE =====================
+     Current executive and preliminary board member cards. -->
 <div id="pg-active" class="page">
   <div class="page-hero">
     <div class="page-hero-bg active-hero-img"></div>
@@ -540,6 +578,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 
   <div class="wrap">
+    <!-- EXECUTIVE BOARD -->
     <div class="sec-label reveal">Leadership</div>
     <h2 class="sec-title reveal">Executive <em>Board</em></h2>
 
@@ -602,9 +641,11 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 
     <div class="hr reveal"></div>
 
+    <!-- PRELIMINARY BOARD -->
     <div class="sec-label reveal">Operations</div>
     <h2 class="sec-title reveal">Preliminary <em>Board</em></h2>
 
+    <!-- EXTERNAL OPERATIONS ROLES -->
     <div class="sub-head reveal">External</div>
     <div class="members-grid reveal">
       <div class="member-card">
@@ -654,6 +695,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div>
 
+    <!-- RECRUITMENT TEAM -->
     <div class="sub-head reveal">Recruitment</div>
     <div class="members-grid reveal">
       <div class="member-card">
@@ -676,6 +718,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div>
 
+    <!-- INTERNAL OPERATIONS ROLES -->
     <div class="sub-head reveal">Internal</div>
     <div class="members-grid reveal">
       <div class="member-card">
@@ -725,6 +768,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div>
 
+    <!-- FINANCE AND FUNDRAISING ROLES -->
     <div class="sub-head reveal">Finance</div>
     <div class="members-grid reveal">
       <div class="member-card">
@@ -762,7 +806,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
     </ul>
   </footer>
 </div><!-- /pg-active -->
-<!-- ===================== PAGE: WHY LAMBDAS ===================== -->
+<!-- ===================== PAGE: WHY LAMBDAS =====================
+     Recruitment-focused explanation of community, advocacy, and leadership benefits. -->
 <div id="pg-why" class="page">
   <div class="page-hero">
     <div class="page-hero-bg why-hero-img"></div>
@@ -819,7 +864,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   </footer>
 </div><!-- /pg-why -->
 
-<!-- ===================== PAGE: MEET OUR BROTHERS ===================== -->
+<!-- ===================== PAGE: MEET OUR BROTHERS =====================
+     Historical class photos and chapter-member rosters. -->
 <div id="pg-brothers" class="page">
   <div class="page-hero">
     <div class="page-hero-bg brothers-hero-img"></div>
@@ -1005,32 +1051,75 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 </div><!-- /pg-brothers -->
 
 <script>
+// List of page IDs managed by the custom single-page navigation.
 const ALL_PAGES = ['home','org','chapter','active','why','brothers'];
+
+/**
+ * Displays the requested page and hides every other page.
+ * The page ID must match an element formatted as "pg-{id}".
+ */
 function goPage(id) {
-  ALL_PAGES.forEach(p => document.getElementById('pg-'+p).classList.remove('active'));
-  document.getElementById('pg-'+id).classList.add('active');
-  window.scrollTo({top:0,behavior:'instant'});
+  // Remove the active class from every page.
+  ALL_PAGES.forEach(p => {
+    document.getElementById('pg-' + p).classList.remove('active');
+  });
+
+  // Show the selected page and return the visitor to the top.
+  document.getElementById('pg-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+
+  // Reset reveal animations so the selected page animates when opened.
   setTimeout(() => {
-    document.getElementById('pg-'+id).querySelectorAll('.reveal').forEach(el => {
-      el.classList.remove('visible');
-      revealObserver.observe(el);
-    });
+    document.getElementById('pg-' + id)
+      .querySelectorAll('.reveal')
+      .forEach(el => {
+        el.classList.remove('visible');
+        revealObserver.observe(el);
+      });
   }, 30);
 }
-function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+/**
+ * Opens or closes the full-screen mobile navigation menu.
+ */
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+/**
+ * Adds the visible class when a reveal element enters the viewport.
+ * Elements are slightly staggered using their entry index.
+ */
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 70);
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 70);
+
+      // Stop observing after the element has been revealed once.
       revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Begin observing every element that uses the reveal animation.
+document.querySelectorAll('.reveal').forEach(el => {
+  revealObserver.observe(el);
+});
+
+/**
+ * Adds a navigation shadow after scrolling and gradually fades
+ * the landing-page hero image as the visitor moves down the page.
+ */
 window.addEventListener('scroll', () => {
-  document.getElementById('main-nav').style.boxShadow = window.scrollY > 40 ? '0 4px 40px rgba(0,0,0,0.6)' : 'none';
+  const mainNav = document.getElementById('main-nav');
+  mainNav.style.boxShadow =
+    window.scrollY > 40 ? '0 4px 40px rgba(0,0,0,0.6)' : 'none';
+
   const heroImage = document.querySelector('.hero-image');
   if (!heroImage) return;
+
   heroImage.style.opacity = Math.max(0, 0.75 - window.scrollY / 800);
 });
 </script>
