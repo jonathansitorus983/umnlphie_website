@@ -44,14 +44,13 @@ body{background:var(--black);color:var(--text);font-family:var(--fb);font-weight
 
 /* WHY LAMBDAS BENEFIT CARDS
    Three responsive cards describing fraternity benefits. */
-.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:50px auto;max-width:1180px}
-.benefit-card{position:relative;padding:34px 28px;background:rgba(255,255,255,0.045);border:1px solid var(--border);border-radius:8px;min-height:280px;overflow:hidden;transition:transform 0.25s ease,border-color 0.25s ease,background 0.25s ease}
-.benefit-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,0.55);background:rgba(201,168,76,0.07)}
-.benefit-icon{font-size:36px;margin-bottom:18px;display:block;line-height:1}
-.benefit-num{font-family:var(--fd);font-size:54px;line-height:1;color:rgba(201,168,76,0.22);margin-bottom:26px}
-.benefit-card h3{font-family:var(--fd);font-size:24px;color:var(--white);margin-bottom:16px;font-weight:500}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);margin:50px auto 0;max-width:1180px;border-top:1px solid var(--border)}
+.benefit-card{position:relative;padding:38px 32px 8px 32px;border-right:1px solid var(--border)}
+.benefit-card:first-child{padding-left:0}
+.benefit-card:last-child{border-right:none;padding-right:0}
+.benefit-card h3{font-family:var(--fd);font-size:23px;color:var(--white);margin-bottom:14px;font-weight:500;font-style:italic}
 .benefit-card p{font-size:14px;line-height:1.8;color:var(--text2)}
-@media(max-width:900px){.benefits-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.benefits-grid{grid-template-columns:1fr;border-top:none}.benefit-card{padding:28px 0;border-right:none;border-top:1px solid var(--border)}.benefit-card:first-child{border-top:none}}
 
 /* DESKTOP NAVIGATION
    Fixed navigation bar, dropdown menus, and highlighted Join Us button. */
@@ -84,10 +83,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 /* HOME HERO
    Main landing area, decorative Greek letters, buttons, and scroll indicator. */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:120px 24px 80px;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(201,168,76,0.07) 0%,transparent 70%)}
 .hero-greek{font-family:var(--fd);font-size:clamp(80px,16vw,180px);font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(201,168,76,0.18);letter-spacing:16px;line-height:1;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;user-select:none;pointer-events:none}
 .hero-content{position:relative;z-index:1;animation:fadeUp 1.2s ease both}
-.eyebrow{font-size:11px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.eyebrow{font-family:var(--fd);font-style:italic;font-size:18px;font-weight:400;color:var(--gold);margin-bottom:24px}
 .hero-title{font-family:var(--fd);font-size:clamp(36px,7vw,82px);font-weight:300;line-height:1.1;color:var(--white);margin-bottom:12px;letter-spacing:1px}
 .hero-title em{font-style:italic;color:var(--gold-light)}
 .hero-sub{font-family:var(--fd);font-size:clamp(16px,3vw,22px);font-weight:300;font-style:italic;color:var(--text2);margin-bottom:48px;letter-spacing:1px}
@@ -120,8 +118,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 /* GENERAL SECTION LAYOUT
    Shared wrappers, labels, and headings used across the site. */
 .wrap{max-width:1200px;margin:0 auto;padding:80px 48px}
-.sec-label{font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px}
-.sec-label::before{content:'';width:32px;height:1px;background:var(--gold);opacity:.5}
+.sec-label{font-family:var(--fd);font-style:italic;font-size:17px;font-weight:400;color:var(--gold);margin-bottom:10px}
 .sec-title{font-family:var(--fd);font-size:clamp(28px,4vw,52px);font-weight:300;color:var(--white);line-height:1.15;margin-bottom:40px}
 .sec-title em{font-style:italic;color:var(--gold-light)}
 
@@ -170,7 +167,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;ali
 /* MISSION, VISION, AND VALUES SECTION */
 .foundation-section{position:relative;overflow:hidden;padding:90px 32px;margin:40px auto;border-radius:8px;max-width:1180px}
 .foundation-content{position:relative;z-index:1;text-align:center}
-.foundation-content .sec-label{justify-content:center;margin-left:auto;margin-right:auto}
+.foundation-content .sec-label{text-align:center}
 .foundation-content .sec-title{text-align:center;margin-left:auto;margin-right:auto}
 .foundation-content .members-grid{max-width:900px!important;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:18px}
 .foundation-content .member-card{text-align:left}
@@ -198,10 +195,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 /* MEMBER CARD BASE STYLES
    Used for officers, coordinators, and chapter-member listings. */
 .members-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
-.member-card{background:var(--dark2);border:1px solid var(--border2);border-radius:3px;padding:22px;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
-.member-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);opacity:0;transition:opacity .2s}
-.member-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-2px)}
-.member-card:hover::before{opacity:1}
+.member-card{background:var(--dark2);border:1px solid var(--border2);border-radius:3px;padding:22px;transition:border-color .2s;position:relative;overflow:hidden}
+.member-card:hover{border-color:rgba(201,168,76,0.35)}
 .member-role{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .member-name{font-family:var(--fd);font-size:20px;font-weight:400;color:var(--white);margin-bottom:3px}
 .member-alias{font-family:var(--fd);font-size:13px;font-style:italic;color:var(--text2);margin-bottom:10px}
@@ -249,10 +244,8 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 /* ALTERNATE PORTRAIT CARD COMPONENT
    Retained for future profile layouts. */
 .portrait-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:14px}
-.portrait-card{background:var(--dark2);border:1px solid var(--border2);border-radius:4px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
-.portrait-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);opacity:0;transition:opacity .2s;z-index:1}
-.portrait-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-3px)}
-.portrait-card:hover::before{opacity:1}
+.portrait-card{background:var(--dark2);border:1px solid var(--border2);border-radius:4px;overflow:hidden;transition:border-color .2s;position:relative}
+.portrait-card:hover{border-color:rgba(201,168,76,0.35)}
 .portrait-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;display:block;filter:grayscale(15%);transition:transform .4s,filter .4s}
 .portrait-card:hover .portrait-img{transform:scale(1.04);filter:grayscale(0%)}
 .portrait-img-placeholder{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--dark3) 0%,var(--dark4) 100%);display:flex;align-items:center;justify-content:center}
@@ -282,10 +275,11 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 .video-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:var(--dark2);border:1px solid var(--border2);border-radius:3px;min-height:260px;padding:40px;text-align:center}
 .video-fallback p{font-size:13px;color:var(--text2)}
 
-/* SCROLL REVEAL STATES
-   Elements begin hidden and become visible through IntersectionObserver. */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+/* CONTENT VISIBILITY
+   Content renders in place; the one deliberate entrance animation on the
+   site lives on .hero-content (see @keyframes fadeUp) rather than being
+   scattered across every card on every page. */
+.reveal{opacity:1}
 
 /* KEYFRAME ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
@@ -320,7 +314,6 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
 .hero-title{font-size:clamp(48px,8vw,96px);letter-spacing:.4px}
 .page-title{font-size:clamp(52px,8vw,96px);letter-spacing:.4px}
 .sec-title{font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:.25px}
-.sec-label{font-size:11px;letter-spacing:4.5px}
 .member-ig{display:block;margin-top:8px;color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:.5px;transition:opacity .2s ease,color .2s ease;word-break:break-word}
 .member-ig:hover{opacity:.8;color:var(--gold-light)}
 
@@ -444,7 +437,7 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
   <div class="join-bg">
     <div class="join-greek">ΛΦΕ</div>
     <div class="join-inner">
-      <div class="sec-label reveal" style="justify-content:center">Become a Brother</div>
+      <div class="sec-label reveal" style="text-align:center">Become a Brother</div>
       <h2 class="join-title reveal">Interested in <em>Joining?</em></h2>
       <p class="join-text reveal">Lambda Phi Epsilon at the University of Minnesota is always looking for driven, passionate individuals who want to be part of something bigger. Fill out our interest form and take the first step toward brotherhood.</p>
       <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
@@ -822,29 +815,23 @@ footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;align-i
       <p class="reveal" style="font-size:17px;line-height:1.9;color:var(--text)">Lambda Phi Epsilon offers not only a brotherhood within our chapter, but connections throughout the multicultural greek council and across the world. With <strong style="color:var(--white)">70+ chapters</strong>, we create a sense of community internationally that is only possible through our organization.</p>
     </div>
 
-    <div class="benefits-grid reveal">
+    <div class="benefits-grid">
       <div class="benefit-card">
-        <span class="benefit-icon">🤝</span>
-        <div class="benefit-num">01</div>
         <h3>Community &amp; Connections</h3>
         <p>Lambda Phi Epsilon allows our brothers to foster a sense of community within our fraternity, the greater multicultural Greek council, and organizations across the world.</p>
       </div>
       <div class="benefit-card">
-        <span class="benefit-icon">🌱</span>
-        <div class="benefit-num">02</div>
         <h3>Philanthropy &amp; Advocacy</h3>
         <p>We aim to increase awareness for advocacy topics with a special focus on APIDA initiatives, creating inclusive spaces through collaboration and events.</p>
       </div>
       <div class="benefit-card">
-        <span class="benefit-icon">⭐</span>
-        <div class="benefit-num">03</div>
         <h3>Leadership &amp; Development</h3>
         <p>Guided by our motto, "To Be Leaders Among Men," our fraternity cultivates the next generation of leaders within the APIDA community and beyond.</p>
       </div>
     </div>
 
     <div style="text-align:center;margin-top:72px" class="reveal">
-      <div class="sec-label" style="justify-content:center;margin-bottom:18px">Take the Next Step</div>
+      <div class="sec-label" style="text-align:center;margin-bottom:18px">Take the Next Step</div>
       <h2 style="font-family:var(--fd);font-size:clamp(26px,4vw,50px);font-weight:300;color:var(--white);margin-bottom:26px">Interested in <em style="font-style:italic;color:var(--gold-light)">Joining?</em></h2>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSerx7kRfJUA6RfQIZ31fdmBRpMyaQpcfl1fgpjnzZYY3oKhpg/viewform" target="_blank" class="btn-primary">Check out our Interest Form!</a>
     </div>
